@@ -1,7 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/theipiqje/public_html/
-    - /bin/cp -R * $DEPLOYPATH
-    - /bin/cp -R .htaccess $DEPLOYPATH
-    
+    - /bin/cp -f about.html "$HOME/public_html/"
