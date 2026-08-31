@@ -2,17 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/theipiqje/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp about.html $DEPLOYPATH
-    - /bin/cp contact.html $DEPLOYPATH
-    - /bin/cp faq.html $DEPLOYPATH
-    - /bin/cp process.html $DEPLOYPATH
-    - /bin/cp programme-purpose.html $DEPLOYPATH
-    - /bin/cp programme-reach.html $DEPLOYPATH
-    - /bin/cp programme-voice.html $DEPLOYPATH
-    - /bin/cp programmes.html $DEPLOYPATH
-    - /bin/cp summit-2026.html $DEPLOYPATH
-    - /bin/cp why-us.html $DEPLOYPATH
-    - /bin/cp -R css $DEPLOYPATH
-    - /bin/cp -R js $DEPLOYPATH
-    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R .htaccess $DEPLOYPATH
+    
