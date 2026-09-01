@@ -12,6 +12,7 @@ deployment:
     - /bin/cp -f programmes.html "$HOME/public_html/"
     - /bin/cp -f summit-2026.html "$HOME/public_html/"
     - /bin/cp -f why-us.html "$HOME/public_html/"
+    - /bin/cp -f speakers.html "$HOME/public_html/"
     - /bin/cp -Rf css "$HOME/public_html/"
     - /bin/cp -Rf js "$HOME/public_html/"
     - /bin/cp -Rf images "$HOME/public_html/"
