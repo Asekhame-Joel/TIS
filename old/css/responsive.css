@@ -98,12 +98,3 @@
   h1 { font-size: 2.15rem; }
   .marquee-track { font-size: 0.8rem; }
 }
-
-/* -------- speakers page -------- */
-@media (max-width: 1024px) {
-  .speaker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 700px) {
-  .speaker-grid, .speaker-grid.cols-2 { grid-template-columns: 1fr; }
-  .speaker-card { max-width: 420px; margin-inline: auto; width: 100%; }
-}
