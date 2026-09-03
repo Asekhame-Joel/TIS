@@ -59,6 +59,7 @@
       <div class="container split" style="align-items:start">
         <div class="reveal">
           <form
+  id="enquiry-form"
   class="form-card"
   method="POST"
   action="https://api.web3forms.com/submit"
@@ -169,6 +170,13 @@
     Send enquiry
     <span class="arrow" aria-hidden="true">&rarr;</span>
   </button>
+
+  <p
+  id="form-status"
+  role="status"
+  aria-live="polite"
+  style="display:none; margin-top:1rem;"
+></p>
 </form>
         </div>
         <div class="reveal reveal-delay-1">
@@ -260,7 +268,6 @@
       </div>
     </div>
   </footer>
-
   <script src="js/main.js"></script>
 </body>
 </html>

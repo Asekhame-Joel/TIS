@@ -55,3 +55,54 @@
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
   items.forEach(function (el) { io.observe(el); });
 })();
+
+
+const enquiryForm = document.getElementById("enquiry-form");
+
+if (enquiryForm) {
+  const statusMessage = document.getElementById("form-status");
+  const submitButton = enquiryForm.querySelector('button[type="submit"]');
+
+  enquiryForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    submitButton.disabled = true;
+    submitButton.innerHTML = "Sending...";
+    statusMessage.style.display = "none";
+
+    try {
+      const response = await fetch(enquiryForm.action, {
+        method: "POST",
+        body: new FormData(enquiryForm)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Submission failed");
+      }
+
+      enquiryForm.reset();
+
+      statusMessage.textContent =
+        "Thank you! Your enquiry has been submitted successfully.";
+      statusMessage.style.display = "block";
+      statusMessage.style.color = "#16794b";
+
+      submitButton.textContent = "Sent ✓";
+
+      setTimeout(function () {
+        window.location.reload();
+      }, 3000);
+    } catch (error) {
+      statusMessage.textContent =
+        "Sorry, your enquiry could not be sent. Please try again.";
+      statusMessage.style.display = "block";
+      statusMessage.style.color = "#b42318";
+
+      submitButton.disabled = false;
+      submitButton.innerHTML =
+        'Send enquiry <span class="arrow" aria-hidden="true">&rarr;</span>';
+    }
+  });
+}
