@@ -58,33 +58,118 @@
     <section class="section section-white">
       <div class="container split" style="align-items:start">
         <div class="reveal">
-          <form class="form-card" method="post" action="#" novalidate>
-            <h2 style="font-size:1.6rem">Enquiry form</h2>
-            <p style="margin-bottom:1.75rem">All fields marked required help us answer properly the first time.</p>
-            <div class="form-row">
-              <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" required placeholder="Your name"></div>
-              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@example.com"></div>
-            </div>
-            <div class="form-row">
-              <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" placeholder="Best number to reach you"></div>
-              <div class="field"><label for="tier">Tier of interest</label>
-                <select id="tier" name="tier">
-                  <option>Standard</option><option>Premium</option><option>VIP</option><option>Not sure yet</option>
-                </select>
-              </div>
-            </div>
-            <div class="field"><label for="topic">What is this about?</label>
-              <select id="topic" name="topic">
-                <option>Reserving a seat for the 2026 Summit</option>
-                <option>Programme information (Purpose, Voice, Reach)</option>
-                <option>Speaking or mentoring at the Summit</option>
-                <option>Something else</option>
-              </select>
-            </div>
-            <div class="field"><label for="message">Your message</label><textarea id="message" name="message" required placeholder="Tell us where you are right now and what you want from the day."></textarea></div>
-            <button class="btn btn-primary btn-block" type="submit">Send enquiry <span class="arrow" aria-hidden="true">&rarr;</span></button>
-            <p class="field-hint" style="margin-top:1rem">This form is part of a static build. Connect it to your preferred email or form service before going live.</p>
-          </form>
+          <form
+  class="form-card"
+  method="POST"
+  action="https://api.web3forms.com/submit"
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="5b734283-020e-4ff4-9a90-dd0743acae91"
+  >
+
+  <input
+    type="hidden"
+    name="subject"
+    value="New 2026 Summit enquiry"
+  >
+
+  <!-- Spam protection -->
+  <input
+    type="checkbox"
+    name="botcheck"
+    class="hidden"
+    style="display:none"
+    tabindex="-1"
+    autocomplete="off"
+  >
+
+  <h2 style="font-size:1.6rem">Enquiry form</h2>
+
+  <p style="margin-bottom:1.75rem">
+    All fields marked required help us answer properly the first time.
+  </p>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="name">Full name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required
+        placeholder="Your name"
+      >
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        placeholder="you@example.com"
+      >
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="phone">Phone (optional)</label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        placeholder="Best number to reach you"
+      >
+    </div>
+
+    <div class="field">
+      <label for="tier">Tier of interest</label>
+      <select id="tier" name="tier">
+        <option value="Standard">Standard</option>
+        <option value="Premium">Premium</option>
+        <option value="VIP">VIP</option>
+        <option value="Not sure yet">Not sure yet</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="topic">What is this about?</label>
+    <select id="topic" name="topic">
+      <option value="Reserving a seat for the 2026 Summit">
+        Reserving a seat for the 2026 Summit
+      </option>
+      <option value="Programme information (Purpose, Voice, Reach)">
+        Programme information (Purpose, Voice, Reach)
+      </option>
+      <option value="Speaking or mentoring at the Summit">
+        Speaking or mentoring at the Summit
+      </option>
+      <option value="Something else">
+        Something else
+      </option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="message">Your message</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      placeholder="Tell us where you are right now and what you want from the day."
+    ></textarea>
+  </div>
+
+  <button class="btn btn-primary btn-block" type="submit">
+    Send enquiry
+    <span class="arrow" aria-hidden="true">&rarr;</span>
+  </button>
+</form>
         </div>
         <div class="reveal reveal-delay-1">
           <span class="eyebrow">Event details</span>
