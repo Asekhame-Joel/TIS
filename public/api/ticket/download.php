@@ -12,6 +12,8 @@ try {
         http_response_code(404);
         exit('Ticket not found.');
     }
+￼
+
 
     $config = tis_config();
     $order = (new TicketService(tis_db(), $config))->findByToken($token);
@@ -22,13 +24,10 @@ try {
 
     $pdf = TicketPdf::render($order, $config);
     $filename = preg_replace('/[^A-Za-z0-9_-]/', '-', (string) $order['ticket_number']) . '.pdf';
-    $disposition = (string) ($_GET['download'] ?? '') === '1' ? 'attachment' : 'inline';
     header('Content-Type: application/pdf');
-    header('Content-Disposition: ' . $disposition . '; filename="' . $filename . '"');
+    header('Content-Disposition: attachment; filename="' . $filename . '"');
     header('Content-Length: ' . strlen($pdf));
     header('Cache-Control: private, no-store, max-age=0');
-    header('Pragma: no-cache');
-    header('Expires: 0');
     header('X-Content-Type-Options: nosniff');
     echo $pdf;
 } catch (Throwable $error) {
