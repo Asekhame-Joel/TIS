@@ -1,0 +1,23 @@
+DirectoryIndex index.php
+Options -Indexes
+RewriteEngine On
+
+<Files "_bootstrap.php">
+  Require all denied
+</Files>
+
+# API calls must keep their HTTP method and request body.
+RewriteRule ^api/ - [L]
+
+# Redirect explicit legacy page filenames to clean public URLs.
+RewriteCond %{THE_REQUEST} \s/+index\.(?:html|php)[\s?] [NC]
+RewriteRule ^index\.(?:html|php)$ / [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.(?:html|php)[\s?] [NC]
+RewriteRule ^(.+?)\.(?:html|php)$ /$1 [R=301,L]
+
+# Internally serve extensionless routes from their PHP page.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^(.+?)/?$ $1.php [L,QSA]

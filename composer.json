@@ -1,0 +1,28 @@
+{
+    "name": "tis/website",
+  "description": "The Intellectual Summit website and multi-tier ticketing system",
+  "type": "project",
+  "license": "proprietary",
+    "require": {
+        "php": "^8.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-pdo": "*",
+        "dompdf/dompdf": "^3.1",
+        "phpmailer/phpmailer": "^6.10",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "TIS\\": "app/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

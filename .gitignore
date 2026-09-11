@@ -1,0 +1,6 @@
+/.env
+/vendor/
+/config.local.php
+/tis-private/
+*.log
+.DS_Store
