@@ -6,6 +6,10 @@ RewriteEngine On
   Require all denied
 </Files>
 
+# Application code is deployed with the website, but must never be served.
+RewriteRule ^(?:app|config|scripts|vendor)/ - [F,L,NC]
+RewriteRule ^(?:composer\.(?:json|lock))$ - [F,L,NC]
+
 # API calls must keep their HTTP method and request body.
 RewriteRule ^api/ - [L]
 

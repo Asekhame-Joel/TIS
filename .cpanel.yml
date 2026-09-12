@@ -1,11 +1,10 @@
 ---
 deployment:
   tasks:
+    - /bin/mkdir -p /home/theipqe/public_html
     - composer install --no-dev --optimize-autoloader --no-interaction
-    - /bin/mkdir -p "$HOME/tis-app/app" "$HOME/tis-app/config" "$HOME/tis-app/scripts" "$HOME/tis-app/vendor" "$HOME/public_html"
-    - /bin/cp -Rf app/. "$HOME/tis-app/app/"
-    - /bin/cp -Rf config/. "$HOME/tis-app/config/"
-    - /bin/cp -Rf scripts/. "$HOME/tis-app/scripts/"
-    - /bin/cp -Rf vendor/. "$HOME/tis-app/vendor/"
-    - /bin/cp -f composer.json composer.lock "$HOME/tis-app/"
-    - /bin/cp -Rf public/. "$HOME/public_html/"
+    - /bin/cp -Rf app/. /home/theipqe/public_html/app/
+    - /bin/cp -Rf config/. /home/theipqe/public_html/config/
+    - /bin/cp -Rf scripts/. /home/theipqe/public_html/scripts/
+    - /bin/cp -Rf vendor/. /home/theipqe/public_html/vendor/
+    - /bin/cp -f composer.json composer.lock /home/theipqe/public_html/

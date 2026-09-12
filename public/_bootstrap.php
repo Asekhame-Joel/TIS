@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 $candidates = array_filter([
     getenv('TIS_APP_BOOTSTRAP') ?: null,
-    dirname(__DIR__) . '/app/bootstrap.php',
     isset($_SERVER['DOCUMENT_ROOT'])
-        ? dirname(rtrim((string) $_SERVER['DOCUMENT_ROOT'], '/')) . '/tis-app/app/bootstrap.php'
+        ? rtrim((string) $_SERVER['DOCUMENT_ROOT'], '/') . '/app/bootstrap.php'
         : null,
+    dirname(__DIR__) . '/app/bootstrap.php',
 ]);
 
 foreach ($candidates as $bootstrap) {
