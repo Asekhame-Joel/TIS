@@ -1,10 +1,9 @@
 ---
 deployment:
   tasks:
-    - /bin/mkdir -p "$HOME/public_html/app" "$HOME/public_html/config" "$HOME/public_html/scripts" "$HOME/public_html/vendor"
+    - /bin/mkdir -p "$HOME/public_html/app" "$HOME/public_html/scripts" "$HOME/public_html/vendor"
     - php "$HOME/bin/composer" install --no-dev --optimize-autoloader --no-interaction
     - /bin/cp -Rf app/. "$HOME/public_html/app/"
-    - /bin/cp -Rf config/. "$HOME/public_html/config/"
     - /bin/cp -Rf scripts/. "$HOME/public_html/scripts/"
     - /bin/cp -Rf vendor/. "$HOME/public_html/vendor/"
     - /bin/cp -f composer.json composer.lock "$HOME/public_html/"

@@ -8,21 +8,27 @@ function tis_config(): array
         return $config;
     }
 
-    $config = require TIS_PROJECT_ROOT . '/config/defaults.php';
     $documentRoot = isset($_SERVER['DOCUMENT_ROOT']) ? rtrim((string) $_SERVER['DOCUMENT_ROOT'], '/') : '';
     $localConfigPath = TIS_PROJECT_ROOT . '/config.local.php';
-    $defaultPath = is_file($localConfigPath)
-        ? $localConfigPath
-        : ($documentRoot !== '' ? dirname($documentRoot) . '/tis-private/config.php' : $localConfigPath);
+    $privateConfigPath = $documentRoot !== ''
+        ? dirname($documentRoot) . '/tis-private/config.php'
+        : dirname(TIS_PROJECT_ROOT) . '/tis-private/config.php';
     $environmentConfigPath = $_ENV['TIS_CONFIG_PATH'] ?? (getenv('TIS_CONFIG_PATH') ?: '');
-    $configPath = $environmentConfigPath !== '' ? $environmentConfigPath : $defaultPath;
+    $configPath = $environmentConfigPath !== '' ? $environmentConfigPath : $privateConfigPath;
 
     if (is_file($configPath)) {
-        $privateConfig = require $configPath;
-        if (!is_array($privateConfig)) {
-            throw new RuntimeException('The private TIS configuration must return an array.');
-        }
-        $config = array_replace_recursive($config, $privateConfig);
+        $config = require $configPath;
+    } elseif (is_file($localConfigPath)) {
+        // Local development may use a small override file.
+        $defaults = require TIS_PROJECT_ROOT . '/config/defaults.php';
+        $localConfig = require $localConfigPath;
+        $config = array_replace_recursive($defaults, $localConfig);
+    } else {
+        throw new RuntimeException('The private TIS configuration file is missing.');
+    }
+
+    if (!is_array($config)) {
+        throw new RuntimeException('The private TIS configuration must return an array.');
     }
 
     return $config;
