@@ -182,31 +182,68 @@ $homeTiers = tis_ticket_tiers();
           <h2>The Intellectual Summit, live in Okada.</h2>
           <p class="lead">A single day of talks, mentorship, and conversation. Early Bird pricing is available across all three tiers.</p>
         </div>
-        <div class="grid grid-3">
-          <article class="card tier reveal reveal-delay-0">
-            <span class="tier-flag">Early Bird</span>
-            <span class="tier-name">Standard</span>
-            <div class="tier-price"><span class="price-amount"><?= number_format(((int) $homeTiers['standard']['ticket_price_kobo']) / 100, 0) ?></span></div>
-            <p>Full access to the main hall, all talks, and the general networking session.</p>
-            <ul class="check-list" style="margin-top:1.25rem"><li>Full day access</li><li>All main talks</li><li>Networking session</li></ul>
-            <div class="card-foot"><a class="btn btn-outline btn-block" href="/summit-2026?tier=standard#tiers">Reserve Standard <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
-          </article>
-          <article class="card tier featured reveal reveal-delay-1">
-            <span class="tier-flag">Early Bird &middot; Most chosen</span>
-            <span class="tier-name">Premium</span>
-            <div class="tier-price"><span class="price-amount"><?= number_format(((int) $homeTiers['premium']['ticket_price_kobo']) / 100, 0) ?></span></div>
-            <p>Standard access plus priority seating and a dedicated mentorship touchpoint.</p>
-            <ul class="check-list" style="margin-top:1.25rem"><li>Priority seating</li><li>Mentorship touchpoint</li><li>Event materials</li></ul>
-            <div class="card-foot"><a class="btn btn-primary btn-block" href="/summit-2026?tier=premium#tiers">Reserve Premium <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
-          </article>
-          <article class="card tier reveal reveal-delay-2">
-            <span class="tier-flag">Early Bird</span>
-            <span class="tier-name">VIP</span>
-            <div class="tier-price"><span class="price-amount"><?= number_format(((int) $homeTiers['vip']['ticket_price_kobo']) / 100, 0) ?></span></div>
-            <p>The complete experience, including direct access to speakers and the closing reception.</p>
-            <ul class="check-list" style="margin-top:1.25rem"><li>Front row seating</li><li>Speaker meet and greet</li><li>Closing reception</li></ul>
-            <div class="card-foot"><a class="btn btn-outline btn-block" href="/summit-2026?tier=vip#tiers">Reserve VIP <span class="arrow" aria-hidden="true">&rarr;</span></a></div>
-          </article>
+        <div class="home-ticket-showcase reveal" aria-label="Summit 2026 ticket options">
+          <div class="home-tier-grid">
+            <article class="home-tier-card home-tier-standard reveal reveal-delay-0" aria-labelledby="home-standard-title">
+              <header class="home-tier-card-header">
+                <span class="home-tier-flag">Early Bird</span>
+                <span class="home-tier-number" aria-hidden="true">01</span>
+              </header>
+              <div class="home-tier-card-body">
+                <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="home-tier-kicker">Essential admission</span>
+                <h3 id="home-standard-title">Standard Access</h3>
+                <p>Full access to the main hall, all talks, and the general networking session.</p>
+                <ul class="home-tier-benefits"><li>Full day access</li><li>All main talks</li><li>Networking session</li></ul>
+              </div>
+              <footer class="home-tier-card-footer">
+                <span class="home-ticket-price-label">Early Bird ticket price</span>
+                <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['standard']['ticket_price_kobo']) / 100, 0) ?></strong></p>
+                <small>Per attendee · checkout charges shown before payment</small>
+                <a class="btn btn-outline btn-block home-tier-button" href="/summit-2026?tier=standard#tiers">Reserve Standard <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              </footer>
+            </article>
+
+            <article class="home-tier-card home-tier-featured reveal reveal-delay-1" aria-labelledby="home-premium-title">
+              <header class="home-tier-card-header">
+                <span class="home-tier-flags"><span class="home-tier-flag">Early Bird</span><span class="home-tier-popular">Most chosen</span></span>
+                <span class="home-tier-number" aria-hidden="true">02</span>
+              </header>
+              <div class="home-tier-card-body">
+                <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="home-tier-kicker">Elevated experience</span>
+                <h3 id="home-premium-title">Premium Access</h3>
+                <p>Standard access plus priority seating and a dedicated mentorship touchpoint.</p>
+                <ul class="home-tier-benefits"><li>Priority seating</li><li>Mentorship touchpoint</li><li>Event materials</li></ul>
+              </div>
+              <footer class="home-tier-card-footer">
+                <span class="home-ticket-price-label">Early Bird ticket price</span>
+                <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['premium']['ticket_price_kobo']) / 100, 0) ?></strong></p>
+                <small>Per attendee · checkout charges shown before payment</small>
+                <a class="btn btn-primary btn-block home-tier-button" href="/summit-2026?tier=premium#tiers">Reserve Premium <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              </footer>
+            </article>
+
+            <article class="home-tier-card home-tier-vip reveal reveal-delay-2" aria-labelledby="home-vip-title">
+              <header class="home-tier-card-header">
+                <span class="home-tier-flag">Early Bird</span>
+                <span class="home-tier-number" aria-hidden="true">03</span>
+              </header>
+              <div class="home-tier-card-body">
+                <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="home-tier-kicker">Signature access</span>
+                <h3 id="home-vip-title">VIP Access</h3>
+                <p>The complete experience, including direct access to speakers and the closing reception.</p>
+                <ul class="home-tier-benefits"><li>Front row seating</li><li>Speaker meet and greet</li><li>Closing reception</li></ul>
+              </div>
+              <footer class="home-tier-card-footer">
+                <span class="home-ticket-price-label">Early Bird ticket price</span>
+                <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['vip']['ticket_price_kobo']) / 100, 0) ?></strong></p>
+                <small>Per attendee · checkout charges shown before payment</small>
+                <a class="btn btn-navy btn-block home-tier-button" href="/summit-2026?tier=vip#tiers">Reserve VIP <span class="arrow" aria-hidden="true">&rarr;</span></a>
+              </footer>
+            </article>
+          </div>
         </div>
         <div style="text-align:center;margin-top:2.5rem"><a class="btn btn-navy" href="/summit-2026">Full event details</a></div>
       </div>
