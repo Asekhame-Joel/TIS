@@ -12,9 +12,6 @@ try {
         http_response_code(404);
         exit('Ticket not found.');
     }
-￼
-
-
     $config = tis_config();
     $order = (new TicketService(tis_db(), $config))->findByToken($token);
     if ($order === null) {
