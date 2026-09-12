@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - /bin/mkdir -p "$HOME/public_html/app" "$HOME/public_html/config" "$HOME/public_html/scripts" "$HOME/public_html/vendor"
-    - composer install --no-dev --optimize-autoloader --no-interaction
+    - php "$HOME/bin/composer" install --no-dev --optimize-autoloader --no-interaction
     - /bin/cp -Rf app/. "$HOME/public_html/app/"
     - /bin/cp -Rf config/. "$HOME/public_html/config/"
     - /bin/cp -Rf scripts/. "$HOME/public_html/scripts/"
