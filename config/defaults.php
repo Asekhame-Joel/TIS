@@ -5,6 +5,12 @@ return [
     'environment' => 'test',
     'site_url' => 'https://www.theintellectualsummit.com',
     'paystack_secret_key' => '',
+    'paystack_split_codes' => [
+        'standard' => '',
+        'premium' => '',
+        'vip' => '',
+    ],
+    // Legacy fallback for old deployments. New ticket payments use the per-tier codes above.
     'paystack_split_code' => '',
     'currency' => 'NGN',
     'secondary_allocation_kobo' => 10000,

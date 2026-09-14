@@ -41,6 +41,7 @@ try {
     if ($tier === null) {
         tis_json_response(['success' => false, 'message' => 'Choose a valid Summit 2026 ticket tier.'], 422);
     }
+    $splitCode = tis_ticket_split_code($tierSlug, $config);
 
     $clientHash = tis_client_hash();
     $environment = (string) ($config['environment'] ?? 'live');
@@ -91,7 +92,7 @@ try {
         'currency' => (string) $config['currency'],
         'reference' => $reference,
         'callback_url' => tis_site_url('/payment-status'),
-        'split_code' => (string) $config['paystack_split_code'],
+        'split_code' => $splitCode,
         'channels' => $channels,
         'metadata' => json_encode([
             'order_reference' => $reference,

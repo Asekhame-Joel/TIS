@@ -10,9 +10,13 @@ return [
     'environment' => 'test',
     'site_url' => 'https://www.theintellectualsummit.com',
 
-    // Use sk_test_... during testing. Replace both the key and split code for live mode.
+    // Use sk_test_... during testing. Replace the key and all three split codes for live mode.
     'paystack_secret_key' => 'sk_test_REPLACE_ME',
-    'paystack_split_code' => 'SPL_eeAuKjdcsJ',
+    'paystack_split_codes' => [
+        'standard' => 'SPL_STANDARD_REPLACE_ME',
+        'premium' => 'SPL_PREMIUM_REPLACE_ME',
+        'vip' => 'SPL_VIP_REPLACE_ME',
+    ],
     'currency' => 'NGN',
     'secondary_allocation_kobo' => 10000,
 

@@ -197,6 +197,20 @@ function tis_ticket_tier(string $slug, ?array $config = null): ?array
     return isset($tiers[$normalized]) ? $tiers[$normalized] : null;
 }
 
+function tis_ticket_split_code(string $tierSlug, ?array $config = null): string
+{
+    $config ??= tis_config();
+    $normalized = strtolower(trim($tierSlug));
+    $tierCodes = $config['paystack_split_codes'] ?? null;
+
+    if (is_array($tierCodes) && isset($tierCodes[$normalized])) {
+        return trim((string) $tierCodes[$normalized]);
+    }
+
+    // Retain compatibility with the original one-split configuration.
+    return trim((string) ($config['paystack_split_code'] ?? ''));
+}
+
 function tis_money(int $amountKobo, bool $includeDecimals = true): string
 {
     $amount = $amountKobo / 100;
@@ -214,8 +228,10 @@ function tis_assert_payment_config(): void
     if (!preg_match('/^sk_(test|live)_[A-Za-z0-9]+$/', (string) $config['paystack_secret_key'])) {
         throw new RuntimeException('Paystack has not been configured on the server.');
     }
-    if (!preg_match('/^SPL_[A-Za-z0-9]+$/', (string) $config['paystack_split_code'])) {
-        throw new RuntimeException('The Paystack split group has not been configured on the server.');
+    foreach (array_keys(tis_ticket_tiers($config)) as $tierSlug) {
+        if (!preg_match('/^SPL_[A-Za-z0-9]+$/', tis_ticket_split_code($tierSlug, $config))) {
+            throw new RuntimeException('The Paystack split group has not been configured for ' . $tierSlug . '.');
+        }
     }
 
     $isTestKey = str_starts_with((string) $config['paystack_secret_key'], 'sk_test_');
@@ -223,7 +239,6 @@ function tis_assert_payment_config(): void
         throw new RuntimeException('The Paystack key does not match the configured environment.');
     }
 
-    tis_ticket_tiers($config);
 }
 
 function tis_log(string $message): void

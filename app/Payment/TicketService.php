@@ -96,7 +96,8 @@ final class TicketService
             }
 
             $verifiedSplitCode = (string) ($payment['split']['split_code'] ?? '');
-            if ($verifiedSplitCode !== (string) $this->config['paystack_split_code']) {
+            $expectedSplitCode = \tis_ticket_split_code((string) $order['tier'], $this->config);
+            if ($verifiedSplitCode !== $expectedSplitCode) {
                 throw new RuntimeException('The verified transaction does not use the configured ticket split.');
             }
 

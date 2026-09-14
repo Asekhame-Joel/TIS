@@ -20,7 +20,7 @@ $expected = [
 
 $config = tis_config();
 $tiers = tis_ticket_tiers($config);
-$secondaryAllocation = (int) ($config['secondary_allocation_kobo'] ?? 0);
+$ownerAllocation = (int) ($config['secondary_allocation_kobo'] ?? 0);
 $failures = [];
 
 foreach ($expected as $slug => $amounts) {
@@ -33,11 +33,11 @@ foreach ($expected as $slug => $amounts) {
     $ticketPrice = (int) $tier['ticket_price_kobo'];
     $checkoutAmount = (int) $tier['checkout_amount_kobo'];
     $fee = tis_paystack_fee_kobo($checkoutAmount, $config);
-    $mainSettlement = $checkoutAmount - $fee - $secondaryAllocation;
+    $partnerSettlement = $checkoutAmount - $fee - $ownerAllocation;
     $previousAmount = $checkoutAmount - 1;
-    $previousSettlement = $previousAmount
+    $previousPartnerSettlement = $previousAmount
         - tis_paystack_fee_kobo($previousAmount, $config)
-        - $secondaryAllocation;
+        - $ownerAllocation;
 
     if ($ticketPrice !== $amounts['ticket_price_kobo']) {
         $failures[] = sprintf('%s ticket price is %d; expected %d kobo.', $slug, $ticketPrice, $amounts['ticket_price_kobo']);
@@ -45,20 +45,20 @@ foreach ($expected as $slug => $amounts) {
     if ($checkoutAmount !== $amounts['checkout_amount_kobo']) {
         $failures[] = sprintf('%s checkout total is %d; expected %d kobo.', $slug, $checkoutAmount, $amounts['checkout_amount_kobo']);
     }
-    if ($mainSettlement !== $ticketPrice) {
-        $failures[] = sprintf('%s main settlement is %d; expected %d kobo.', $slug, $mainSettlement, $ticketPrice);
+    if ($partnerSettlement !== $ticketPrice) {
+        $failures[] = sprintf('%s partner settlement is %d; expected %d kobo.', $slug, $partnerSettlement, $ticketPrice);
     }
-    if ($previousSettlement >= $ticketPrice) {
+    if ($previousPartnerSettlement >= $ticketPrice) {
         $failures[] = sprintf('%s checkout total is not the smallest amount that settles exactly.', $slug);
     }
 
     printf(
-        "PASS %-8s customer=%s fee=%s secondary=%s main=%s\n",
+        "PASS %-8s customer=%s fee=%s owner=%s partner=%s\n",
         strtoupper($slug),
         tis_money($checkoutAmount),
         tis_money($fee),
-        tis_money($secondaryAllocation),
-        tis_money($mainSettlement)
+        tis_money($ownerAllocation),
+        tis_money($partnerSettlement)
     );
 }
 
