@@ -17,10 +17,10 @@ declare(strict_types=1);
       <div>
         <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-text"><span class="brand-name">The Intellectual Summit</span><span class="brand-tag">Global Relevance</span></span></a>
         <p style="margin-top:1.1rem;max-width:32ch">A Platform that trains young people to think clearly, speak with conviction, and lead beyond their immediate circle.</p>
-        <div class="social-row" style="margin-top:1.4rem">
-          <a href="/contact" aria-label="Contact The Intellectual Summit"><svg viewBox="0 0 24 24"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5zM4.6 6l7.4 5.4L19.4 6z"/></svg></a>
-          <a href="/summit-2026" aria-label="The Summit 2026 event page"><svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h1.5A2.5 2.5 0 0 1 21 6.5v13A2.5 2.5 0 0 1 18.5 22h-13A2.5 2.5 0 0 1 3 19.5v-13A2.5 2.5 0 0 1 5.5 4H7zM5 10v9.5c0 .3.2.5.5.5h13a.5.5 0 0 0 .5-.5V10z"/></svg></a>
-          <a href="/faq" aria-label="Frequently asked questions"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.1 15.5a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4zM13 13.3v.5h-2v-1.2c0-.6.3-1.1.9-1.5l.9-.6c.4-.3.6-.6.6-1 0-.7-.5-1.2-1.3-1.2-.8 0-1.4.5-1.5 1.3H8.5C8.6 7.8 10 6.5 12 6.5c2 0 3.4 1.2 3.4 2.9 0 1-.5 1.8-1.5 2.4l-.6.4c-.2.2-.3.4-.3.6z"/></svg></a>
+        <p class="social-handle">Follow @theintellectualsummit</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/theintellectualsummit/" target="_blank" rel="noopener noreferrer" aria-label="Follow @theintellectualsummit on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3zm5 3.5A4.5 4.5 0 1 0 12 16.5 4.5 4.5 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 12 14.5 2.5 2.5 0 0 1 12 9.5zM17.25 6A1.25 1.25 0 1 0 17.25 8.5 1.25 1.25 0 0 0 17.25 6z"/></svg></a>
+          <a href="https://www.tiktok.com/@theintellectualsummit" target="_blank" rel="noopener noreferrer" aria-label="Follow @theintellectualsummit on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.2a5.7 5.7 0 0 1-3.5-1.2A5.7 5.7 0 0 1 14.5 2h-3.6v13.1a2.9 2.9 0 1 1-2-2.8v-3.7A6.6 6.6 0 1 0 14.5 15V9.7a9.3 9.3 0 0 0 5.1 1.5z"/></svg></a>
         </div>
       </div>
       <div>

@@ -1000,6 +1000,7 @@ details.faq .faq-body { padding: 0 0 1.25rem; font-size: 0.98rem; animation: fad
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
 }
+.social-handle { margin: 1.4rem 0 0.65rem; font-size: 0.8rem; color: rgba(255, 255, 255, 0.62); }
 .social-row { display: flex; gap: 0.6rem; }
 .social-row a {
   width: 40px;
