@@ -25,7 +25,7 @@ require __DIR__ . '/_bootstrap.php';
     <div class="container">
       <section class="form-card status-card is-loading" aria-live="polite" aria-busy="true" id="payment-status-card">
         <div class="status-visual" aria-hidden="true">
-          <div class="status-loader" id="status-loader"><span>TIS</span></div>
+          <div class="status-loader" id="status-loader"><span class="status-logo" aria-hidden="true"><i></i><i></i><i></i></span></div>
           <div class="status-symbol" id="status-symbol">&#10003;</div>
         </div>
         <span class="eyebrow">Summit 2026 ticket</span>

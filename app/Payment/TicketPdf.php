@@ -74,10 +74,10 @@ body { margin: 0; background: #0f1b31; color: #172238; font-family: DejaVu Sans,
 .hero { position: relative; height: 286px; overflow: hidden; padding: 31px 36px; color: #fff; background: {$hero}; }
 .brand-lockup { position: relative; height: 48px; }
 .brand-mark { position: absolute; left: 0; top: 0; width: 45px; height: 39px; }
-.brand-mark span { position: absolute; bottom: 0; display: block; width: 11px; background: {$accent}; }
-.brand-mark .bar-one { left: 0; height: 20px; }
-.brand-mark .bar-two { left: 15px; height: 29px; }
-.brand-mark .bar-three { left: 30px; height: 39px; }
+.brand-mark span { position: absolute; bottom: 0; display: block; width: 11px; }
+.brand-mark .bar-one { left: 0; height: 20px; background: #737b8e; }
+.brand-mark .bar-two { left: 15px; height: 29px; background: #102746; }
+.brand-mark .bar-three { left: 30px; height: 39px; background: #c29a3c; }
 .brand-name { position: absolute; left: 59px; top: 2px; color: #fff; font-family: DejaVu Serif, serif; font-size: 16px; font-weight: 700; letter-spacing: .35px; }
 .brand-tagline { position: absolute; left: 60px; top: 26px; color: {$accent}; font-size: 7px; font-weight: 700; letter-spacing: 3px; }
 .verified-pill { position: absolute; right: 0; top: 3px; padding: 8px 13px; color: #fff; border: 1px solid rgba(255,255,255,.32); border-radius: 20px; font-size: 7px; font-weight: 700; letter-spacing: 1.5px; }

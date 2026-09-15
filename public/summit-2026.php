@@ -339,11 +339,13 @@ $vip = $ticketTiers['vip'];
       display: block;
       flex: 1;
       border-radius: 0.12rem 0.12rem 0 0;
-      background: currentColor;
     }
     .tier-brand-mark i:nth-child(1) { height: 42%; opacity: 0.72; }
     .tier-brand-mark i:nth-child(2) { height: 68%; opacity: 0.86; }
     .tier-brand-mark i:nth-child(3) { height: 100%; }
+    .tier-brand-mark i:nth-child(1) { background: #737b8e; opacity: 1; }
+    .tier-brand-mark i:nth-child(2) { background: #102746; opacity: 1; }
+    .tier-brand-mark i:nth-child(3) { background: linear-gradient(180deg, #ecd986, #bd9333); opacity: 1; }
     .tier-kicker {
       display: block;
       margin-bottom: 0.5rem;

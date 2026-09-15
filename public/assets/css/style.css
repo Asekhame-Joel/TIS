@@ -264,11 +264,13 @@ strong { color: var(--ink); font-weight: 700; }
   display: block;
   width: 7px;
   border-radius: 1px 1px 0 0;
-  background: #617191;
 }
 .brand-mark i:nth-child(1) { height: 11px; }
 .brand-mark i:nth-child(2) { height: 18px; }
 .brand-mark i:nth-child(3) { height: 27px; }
+.brand-mark i:nth-child(1) { background: #737b8e; }
+.brand-mark i:nth-child(2) { background: #102746; }
+.brand-mark i:nth-child(3) { background: linear-gradient(180deg, #ecd986, #bd9333); }
 .site-footer .brand-mark {
   background: rgba(255, 255, 255, 0.96);
 }

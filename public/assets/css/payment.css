@@ -243,19 +243,23 @@ body.checkout-open { overflow: hidden; }
   transform: translate(-50%, -50%);
 }
 
-.status-loader span {
+.status-logo {
   display: grid;
+  grid-template-columns: repeat(3, 8px);
+  align-items: end;
+  justify-content: center;
+  column-gap: 4px;
   width: 58px;
   height: 58px;
-  place-items: center;
   background: var(--white);
   border: 1px solid rgba(201, 164, 76, 0.35);
   border-radius: 50%;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
   box-shadow: 0 9px 22px rgba(16, 28, 51, 0.08);
 }
+.status-logo i { display: block; width: 8px; border-radius: 1px 1px 0 0; }
+.status-logo i:nth-child(1) { height: 13px; background: #737b8e; }
+.status-logo i:nth-child(2) { height: 21px; background: #102746; }
+.status-logo i:nth-child(3) { height: 31px; background: linear-gradient(180deg, #ecd986, #bd9333); }
 
 .status-symbol {
   color: #177447;
