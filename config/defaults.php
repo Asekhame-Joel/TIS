@@ -30,21 +30,23 @@ return [
         'fixed_waiver_threshold_kobo' => 250000,
         'cap_kobo' => 200000,
     ],
+    
     'ticket_tiers' => [
         'standard' => [
-            'label' => 'Standard Access',
+            'label' => 'Standard',
             'ticket_price_kobo' => 500000,
             'ticket_prefix' => 'STND',
         ],
         'premium' => [
-            'label' => 'Premium Access',
+            'label' => 'Premium',
             'ticket_price_kobo' => 1000000,
             'ticket_prefix' => 'PREM',
         ],
         'vip' => [
-            'label' => 'VIP Access',
+            // Keep the `vip` key for existing orders and Paystack split-code compatibility.
+            'label' => 'Deluxe',
             'ticket_price_kobo' => 1500000,
-            'ticket_prefix' => 'VIP',
+            'ticket_prefix' => 'DLX',
         ],
     ],
     'event' => [

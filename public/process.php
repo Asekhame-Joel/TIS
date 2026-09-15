@@ -38,7 +38,7 @@ require __DIR__ . '/_bootstrap.php';
       <div class="container">
         <div class="steps">
           <div class="step reveal"><h3>Discover the platform</h3><p>Read what TIS is built to do and which of the three tracks, Purpose, Voice or Reach, speaks to where you are right now.</p></div>
-          <div class="step reveal"><h3>Choose your access tier</h3><p>Standard, Premium or VIP, with Early Bird pricing currently available across all three tiers.</p></div>
+          <div class="step reveal"><h3>Choose your ticket package</h3><p>Standard, Premium, or Deluxe, with useful Summit items included in every tier.</p></div>
           <div class="step reveal"><h3>Reserve your seat</h3><p>Seating is limited across all three tiers, so a seat is confirmed by payment rather than at the door.</p></div>
           <div class="step reveal"><h3>Prepare before the day</h3><p>Come with a question you actually want answered and, if you intend to speak, an idea you are willing to defend. The sessions reward preparation.</p></div>
           <div class="step reveal"><h3>Attend the Summit</h3><p>One day in Okunozee Hall, Okada: talks, mentorship and conversation, with a general networking session for everyone attending.</p></div>
@@ -53,7 +53,7 @@ require __DIR__ . '/_bootstrap.php';
           <span class="eyebrow">On the day</span>
           <h2>How a Summit day is structured.</h2>
           <p>A single day of talks, mentorship, and conversation. The three outcomes, purpose, voice and reach, run through the programme rather than sitting in separate boxes.</p>
-          <p>Everyone attending has access to the main hall, all talks, and the general networking session. Premium and VIP add depth: a mentorship touchpoint, event materials, front row seating, a speaker meet and greet, and the closing reception.</p>
+          <p>Every ticket includes event access, a TIS-IUO curated food pack, and a branded lanyard. Premium adds a TIS T-shirt. Deluxe includes all Premium items, plus a souvenir item and priority seating.</p>
         </div>
         <div class="reveal reveal-delay-1">
           <div class="card">

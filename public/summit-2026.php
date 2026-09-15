@@ -20,12 +20,12 @@ $vip = $ticketTiers['vip'];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Summit 2026 | The Intellectual Summit</title>
-  <meta name="description" content="Book Early Bird-priced Standard, Premium or VIP tickets for The Intellectual Summit 2026 on 14 November at Okunozee Hall, Okada.">
+  <meta name="description" content="Book Early Bird-priced Standard, Premium or Deluxe tickets for The Intellectual Summit 2026 on 14 November at Okunozee Hall, Okada.">
   <meta name="theme-color" content="#1b2a4a">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Intellectual Summit">
   <meta property="og:title" content="Summit 2026 | The Intellectual Summit">
-  <meta property="og:description" content="Book Early Bird-priced Standard, Premium or VIP tickets for The Intellectual Summit 2026 on 14 November at Okunozee Hall, Okada.">
+  <meta property="og:description" content="Book Early Bird-priced Standard, Premium or Deluxe tickets for The Intellectual Summit 2026 on 14 November at Okunozee Hall, Okada.">
   <link rel="canonical" href="/summit-2026">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -363,6 +363,32 @@ $vip = $ticketTiers['vip'];
     }
     .tier-card.featured h3 { color: var(--white); }
     .tier-card .tier-description { margin: 0; font-size: 0.93rem; line-height: 1.68; }
+    .tier-benefits {
+      display: grid;
+      gap: 0.5rem;
+      margin: 1.1rem 0 0;
+      font-size: 0.84rem;
+      line-height: 1.4;
+    }
+    .tier-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+    .tier-benefits li::before {
+      content: "✓";
+      flex: 0 0 1.15rem;
+      width: 1.15rem;
+      height: 1.15rem;
+      border-radius: 50%;
+      color: var(--navy-deep);
+      background: var(--tier-accent);
+      font-size: 0.7rem;
+      font-weight: 800;
+      line-height: 1.15rem;
+      text-align: center;
+    }
+    .featured .tier-benefits li::before { background: var(--gold-bright); }
     .tier-card-footer {
       position: relative;
       z-index: 2;
@@ -506,7 +532,7 @@ $vip = $ticketTiers['vip'];
         <div class="reveal">
           <span class="eyebrow">Main event, 2026</span>
           <h1>The Intellectual Summit, live in Okada.</h1>
-          <p class="lead">A single day of talks, mentorship, and conversation. Early Bird pricing is available across all three tiers.</p>
+          <p class="lead">Choose the ticket package that includes the Summit essentials you need.</p>
         </div>
         <dl class="details-grid">
           <div class="detail-card reveal">
@@ -549,12 +575,13 @@ $vip = $ticketTiers['vip'];
               <div class="tier-card-body">
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
                 <span class="tier-kicker">Essential admission</span>
-                <h3 id="standard-tier-title">Standard Access</h3>
-                <p class="tier-description">Full day entry, main hall talks, and the general networking session.</p>
+                <h3 id="standard-tier-title"><?= htmlspecialchars((string) $standard['label']) ?></h3>
+                <p class="tier-description">Your essential Summit package.</p>
+                <ul class="tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li></ul>
               </div>
               <div class="tier-card-footer">
                 <span class="ticket-price-label">Early Bird ticket price</span>
-                <div class="ticket-price-display" aria-label="Standard Access costs 5,000 naira before checkout fees">
+                <div class="ticket-price-display" aria-label="Standard costs 5,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $standard['ticket_price_kobo']) / 100, 0) ?></strong>
                 </div>
@@ -574,12 +601,13 @@ $vip = $ticketTiers['vip'];
               <div class="tier-card-body">
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
                 <span class="tier-kicker">Elevated experience</span>
-                <h3 id="premium-tier-title">Premium Access</h3>
-                <p class="tier-description">Priority seating, a dedicated mentorship touchpoint, and event materials.</p>
+                <h3 id="premium-tier-title"><?= htmlspecialchars((string) $premium['label']) ?></h3>
+                <p class="tier-description">Everything in Standard, plus a TIS T-shirt.</p>
+                <ul class="tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li><li>TIS T-shirt</li></ul>
               </div>
               <div class="tier-card-footer">
                 <span class="ticket-price-label">Early Bird ticket price</span>
-                <div class="ticket-price-display" aria-label="Premium Access costs 10,000 naira before checkout fees">
+                <div class="ticket-price-display" aria-label="Premium costs 10,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $premium['ticket_price_kobo']) / 100, 0) ?></strong>
                 </div>
@@ -596,17 +624,18 @@ $vip = $ticketTiers['vip'];
               <div class="tier-card-body">
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
                 <span class="tier-kicker">Signature access</span>
-                <h3 id="vip-tier-title">VIP Access</h3>
-                <p class="tier-description">Front-row seating, speaker meet-and-greet, and the closing reception.</p>
+                <h3 id="vip-tier-title"><?= htmlspecialchars((string) $vip['label']) ?></h3>
+                <p class="tier-description">The complete package, including priority seating.</p>
+                <ul class="tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li><li>Souvenir item</li><li>TIS T-shirt</li><li>Priority seating</li></ul>
               </div>
               <div class="tier-card-footer">
                 <span class="ticket-price-label">Early Bird ticket price</span>
-                <div class="ticket-price-display" aria-label="VIP Access costs 15,000 naira before checkout fees">
+                <div class="ticket-price-display" aria-label="Deluxe costs 15,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $vip['ticket_price_kobo']) / 100, 0) ?></strong>
                 </div>
                 <small class="ticket-price-meta">Per attendee · checkout charges shown before payment</small>
-                <button class="btn btn-outline btn-block tier-buy-button" type="button" data-open-checkout data-tier="vip"><span>Choose VIP</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
+                <button class="btn btn-outline btn-block tier-buy-button" type="button" data-open-checkout data-tier="vip"><span>Choose Deluxe</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
               </div>
             </article>
           </div>
@@ -618,13 +647,13 @@ $vip = $ticketTiers['vip'];
       <div class="container day-covers">
         <div class="reveal">
           <span class="eyebrow">What the day covers</span>
-          <h2>Talks, mentorship, and conversation.</h2>
-          <p class="lead">The programme is built around the three outcomes behind every TIS session: clarity of direction, the courage to speak, and a wider standard.</p>
+          <h2>Every ticket includes thoughtful Summit essentials.</h2>
+          <p class="lead">All tiers include event access, a TIS-IUO curated food pack, and a branded lanyard. Premium adds a TIS T-shirt; Deluxe also includes a souvenir item and priority seating.</p>
           <ul class="check-list" style="margin-top:1.75rem">
-            <li>Main hall talks open to everyone attending</li>
-            <li>A general networking session for all tiers</li>
-            <li>Mentorship touchpoints for Premium and VIP</li>
-            <li>Speaker meet and greet and closing reception for VIP</li>
+            <li>Standard: event access, food pack, and branded lanyard</li>
+            <li>Premium: all Standard items plus a TIS T-shirt</li>
+            <li>Deluxe: all Premium items plus a souvenir item</li>
+            <li>Deluxe includes priority seating</li>
           </ul>
         </div>
         <aside class="reservation-card reveal reveal-delay-1" aria-label="Reserve a seat">
@@ -687,10 +716,10 @@ $vip = $ticketTiers['vip'];
         <aside class="order-summary" aria-label="Order summary">
           <h3>Order summary</h3>
           <dl>
-            <div><dt id="summary-tier">Premium Access</dt><dd id="summary-price"><?= tis_money((int) $premium['ticket_price_kobo']) ?></dd></div>
+            <div><dt id="summary-tier"><?= htmlspecialchars((string) $premium['label']) ?></dt><dd id="summary-price"><?= tis_money((int) $premium['ticket_price_kobo']) ?></dd></div>
             <div class="order-total"><dt>Total + Charges</dt><dd id="summary-total"><?= tis_money((int) $premium['checkout_amount_kobo']) ?></dd></div>
           </dl>
-          <p id="summary-note">Use a valid email address to receive your Premium Access ticket after successful payment.</p>
+          <p id="summary-note">Use a valid email address to receive your <?= htmlspecialchars((string) $premium['label']) ?> ticket after successful payment.</p>
         </aside>
       </div>
     </div>

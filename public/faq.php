@@ -55,7 +55,7 @@ require __DIR__ . '/_bootstrap.php';
           </details>
           <details class="faq reveal">
             <summary>What access tiers are available?</summary>
-            <div class="faq-body"><p>Three. Early Bird pricing is currently available across Standard, Premium and VIP. Standard gives full day access to the main hall, all talks, and the general networking session. Premium adds priority seating, a dedicated mentorship touchpoint, and event materials. VIP is the complete experience, with front row seating, a speaker meet and greet, and the closing reception.</p></div>
+            <div class="faq-body"><p>Three: Standard, Premium, and Deluxe. Every tier includes event access, a TIS-IUO curated food pack, and a branded lanyard. Premium also includes a TIS T-shirt. Deluxe includes everything in Premium, plus a souvenir item and priority seating.</p></div>
           </details>
           <details class="faq reveal">
             <summary>Is seating limited?</summary>

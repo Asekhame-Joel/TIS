@@ -32,6 +32,16 @@ final class TicketPdf
         }
 
         $tierSlug = strtolower((string) ($order['tier'] ?? ''));
+        $tierBenefits = [
+            'standard' => ['Event access', 'TIS-IUO curated food pack', 'Branded lanyard'],
+            'premium' => ['Event access', 'TIS-IUO curated food pack', 'Branded lanyard', 'TIS T-shirt'],
+            // `vip` remains the internal identifier; customers see the Deluxe label above.
+            'vip' => ['Event access', 'TIS-IUO curated food pack', 'Branded lanyard', 'Souvenir item', 'TIS T-shirt', 'Priority seating'],
+        ];
+        $benefitsHtml = implode('', array_map(
+            static fn (string $benefit): string => '<li>' . $safe($benefit) . '</li>',
+            $tierBenefits[$tierSlug] ?? []
+        ));
         $tierStyles = [
             'standard' => ['accent' => '#8291ad', 'accent_dark' => '#526582', 'accent_soft' => '#e9edf4', 'hero' => '#172641', 'number' => '01'],
             'premium' => ['accent' => '#d4ad50', 'accent_dark' => '#a7791f', 'accent_soft' => '#f3e6c4', 'hero' => '#13223e', 'number' => '02'],
@@ -108,6 +118,11 @@ body { margin: 0; background: #0f1b31; color: #172238; font-family: DejaVu Sans,
 .admission-icon { position: absolute; left: 19px; top: 16px; width: 29px; height: 29px; padding-top: 7px; color: #fff; text-align: center; border-radius: 15px; background: {$accentDark}; font-size: 11px; font-weight: 700; }
 .admission-note strong { display: block; margin-bottom: 5px; color: #172238; font-size: 9px; letter-spacing: 1.2px; }
 .admission-note p { margin: 0; color: #526077; font-size: 8px; line-height: 1.5; }
+.benefits { margin: 14px 0; padding: 12px 14px; border: 1px solid #ded8ca; background: #fbfaf5; }
+.benefits .label { margin-bottom: 7px; }
+.benefits ul { margin: 0; padding: 0; list-style: none; }
+.benefits li { display: inline-block; width: 48%; margin: 0 0 5px; color: #526077; font-size: 8px; }
+.benefits li:before { content: "✓ "; color: {$accentDark}; font-weight: 700; }
 .footer { position: absolute; left: 36px; right: 36px; bottom: 25px; padding-top: 13px; border-top: 1px solid #ded8ca; color: #718098; font-size: 7px; }
 .footer-right { position: absolute; right: 0; top: 13px; color: #172238; font-weight: 700; letter-spacing: 1px; }
 .tier-index { position: absolute; right: 34px; bottom: 68px; color: rgba(23,34,56,.07); font-family: DejaVu Serif,serif; font-size: 92px; font-weight: 700; }
@@ -142,6 +157,7 @@ body { margin: 0; background: #0f1b31; color: #172238; font-family: DejaVu Sans,
             <tr><td><div class="label">PAYMENT CHANNEL</div><div class="value">{$paymentChannel}</div></td><td><div class="label">CONFIRMED</div><div class="value">{$confirmedAt}</div></td></tr>
             <tr><td colspan="2"><div class="label">PAYMENT REFERENCE</div><div class="value reference-value">{$paymentReference}</div></td></tr>
         </table>
+        <div class="benefits"><div class="label">YOUR PACKAGE INCLUDES</div><ul>{$benefitsHtml}</ul></div>
         <div class="admission-note"><div class="admission-icon">1</div><strong>KEEP THIS TICKET SAFE - ADMIT ONE</strong><p>Present this ticket and a matching name at the venue entrance.</p></div>
     </main>
     <div class="tier-index">{$tierNumber}</div>

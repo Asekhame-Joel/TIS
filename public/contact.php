@@ -111,7 +111,7 @@ require __DIR__ . '/_bootstrap.php';
       <select id="tier" name="tier">
         <option value="Standard">Standard</option>
         <option value="Premium">Premium</option>
-        <option value="VIP">VIP</option>
+        <option value="Deluxe">Deluxe</option>
         <option value="Not sure yet">Not sure yet</option>
       </select>
     </div>
@@ -169,7 +169,7 @@ require __DIR__ . '/_bootstrap.php';
           </div>
           <div class="card" style="margin-top:2rem">
             <h3>Reserving a seat</h3>
-            <p>Early Bird pricing is available across Standard, Premium and VIP. For immediate confirmation, book on the Summit 2026 tickets page.</p>
+            <p>Early Bird pricing is available across Standard, Premium and Deluxe. For immediate confirmation, book on the Summit 2026 tickets page.</p>
             <div class="card-foot"><a class="btn btn-outline btn-block" href="/summit-2026#tiers">Compare the tiers</a></div>
           </div>
         </div>
