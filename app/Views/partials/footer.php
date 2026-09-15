@@ -15,7 +15,7 @@ declare(strict_types=1);
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">TIS</span><span class="brand-text"><span class="brand-name">The Intellectual Summit</span><span class="brand-tag">Global Relevance</span></span></a>
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-text"><span class="brand-name">The Intellectual Summit</span><span class="brand-tag">Global Relevance</span></span></a>
         <p style="margin-top:1.1rem;max-width:32ch">A Platform that trains young people to think clearly, speak with conviction, and lead beyond their immediate circle.</p>
         <div class="social-row" style="margin-top:1.4rem">
           <a href="/contact" aria-label="Contact The Intellectual Summit"><svg viewBox="0 0 24 24"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5zM4.6 6l7.4 5.4L19.4 6z"/></svg></a>

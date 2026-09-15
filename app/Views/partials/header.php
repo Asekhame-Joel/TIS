@@ -5,7 +5,7 @@ $current = static fn (string $page): string => $activePage === $page ? ' aria-cu
 ?>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">TIS</span><span class="brand-text"><span class="brand-name">The Intellectual Summit</span><span class="brand-tag">Global Relevance</span></span></a>
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="brand-text"><span class="brand-name">The Intellectual Summit</span><span class="brand-tag">Global Relevance</span></span></a>
 <?php if (!$minimalHeader): ?>
     <nav class="nav" aria-label="Primary">
       <ul style="display:contents">
