@@ -12,6 +12,7 @@
   :root { --section-y: clamp(3.5rem, 8vw, 5.5rem); }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-card { max-width: 560px; }
+  .hero-flyer-card { margin-inline: auto; }
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .split { grid-template-columns: 1fr; }
   .cta-inner { grid-template-columns: 1fr; }
@@ -86,6 +87,9 @@
   .nav .btn { width: 100%; }
   .fact { flex-direction: column; gap: 0.15rem; }
   .fact dd { text-align: left; }
+  .hero-flyer-card { width: min(100%, 22rem); }
+  .hero-flyer-card::before { inset: 0.85rem -0.55rem -0.65rem 0.65rem; }
+  .hero-flyer-cta { margin-top: 0.85rem; }
   .hero-meta { gap: 0.35rem 1rem; font-size: 0.72rem; }
   .step { padding: 1.35rem 1.25rem 1.35rem 1.25rem; }
   .step::before { position: static; display: block; margin-bottom: 0.4rem; }

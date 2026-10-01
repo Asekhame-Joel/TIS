@@ -40,17 +40,18 @@ $homeTiers = tis_ticket_tiers();
             <span>14 November 2026</span><span>Okunozee Hall, Okada</span><span>In person, one day</span>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Summit 2026 at a glance">
-          <span class="eyebrow">Main event, 2026</span>
-          <h3>The Intellectual Summit, live in Okada.</h3>
-          <p>A single day of talks, mentorship, and conversation. Early Bird pricing is available across all three tiers.</p>
-          <dl class="fact-list">
-            <div class="fact"><dt>Date</dt><dd>14 November 2026</dd></div>
-            <div class="fact"><dt>Venue</dt><dd>Okunozee Hall, Okada</dd></div>
-            <div class="fact"><dt>Format</dt><dd>In person, one day</dd></div>
-            <div class="fact"><dt>Tickets</dt><dd>Regular &middot; VIP &middot; VVIP</dd></div>
-          </dl>
-          <a class="btn btn-navy btn-block" style="margin-top:1.5rem" href="/summit-2026">See the full programme</a>
+        <aside class="hero-flyer-card reveal" aria-label="The Intellectual Summit 2026 event flyer">
+          <figure class="hero-flyer-frame">
+            <img
+              src="/assets/images/summit-2026-flyer.png"
+              alt="The Intellectual Summit 2026: The Student, The Journey, The Destination. 14 November 2026 at 9 AM, Okunozee Hotel and Suites, Okada, Edo State."
+              width="2160"
+              height="2700"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </figure>
+          <a class="btn btn-primary btn-block hero-flyer-cta" href="/summit-2026#tiers">Explore ticket packages <span aria-hidden="true">&#8594;</span></a>
         </aside>
       </div>
     </section>
