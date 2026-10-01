@@ -48,7 +48,7 @@ $homeTiers = tis_ticket_tiers();
             <div class="fact"><dt>Date</dt><dd>14 November 2026</dd></div>
             <div class="fact"><dt>Venue</dt><dd>Okunozee Hall, Okada</dd></div>
             <div class="fact"><dt>Format</dt><dd>In person, one day</dd></div>
-            <div class="fact"><dt>Tickets</dt><dd>Standard &middot; Premium &middot; Deluxe</dd></div>
+            <div class="fact"><dt>Tickets</dt><dd>Regular &middot; VIP &middot; VVIP</dd></div>
           </dl>
           <a class="btn btn-navy btn-block" style="margin-top:1.5rem" href="/summit-2026">See the full programme</a>
         </aside>
@@ -163,7 +163,7 @@ $homeTiers = tis_ticket_tiers();
           <div class="reveal reveal-delay-1">
             <span class="eyebrow">Step 02</span>
             <h3 style="font-size:1.2rem">Choose your access tier</h3>
-            <p>Standard, Premium, or Deluxe, with useful Summit items included in every tier.</p>
+            <p>Regular, VIP, or VVIP, with a carefully selected package for every attendee.</p>
           </div>
           <div class="reveal reveal-delay-2">
             <span class="eyebrow">Step 03</span>
@@ -193,14 +193,14 @@ $homeTiers = tis_ticket_tiers();
                 <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
                 <span class="home-tier-kicker">Essential admission</span>
                 <h3 id="home-standard-title"><?= htmlspecialchars((string) $homeTiers['standard']['label']) ?></h3>
-                <p>Your essential Summit package.</p>
-                <ul class="home-tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li></ul>
+                <p>Your essential Summit package, including a welcome drink.</p>
+                <ul class="home-tier-benefits"><li>Event access</li><li>TIS curated food pack</li><li>Branded lanyard</li><li>Welcome drink on arrival</li></ul>
               </div>
               <footer class="home-tier-card-footer">
                 <span class="home-ticket-price-label">Early Bird ticket price</span>
                 <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['standard']['ticket_price_kobo']) / 100, 0) ?></strong></p>
                 <small>Per attendee · checkout charges shown before payment</small>
-                <a class="btn btn-outline btn-block home-tier-button" href="/summit-2026?tier=standard#tiers">Reserve Standard <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                <a class="btn btn-outline btn-block home-tier-button" href="/summit-2026?tier=standard#tiers">Reserve Regular <span class="arrow" aria-hidden="true">&rarr;</span></a>
               </footer>
             </article>
 
@@ -213,14 +213,14 @@ $homeTiers = tis_ticket_tiers();
                 <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
                 <span class="home-tier-kicker">Elevated experience</span>
                 <h3 id="home-premium-title"><?= htmlspecialchars((string) $homeTiers['premium']['label']) ?></h3>
-                <p>Everything in Standard, plus a TIS T-shirt.</p>
-                <ul class="home-tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li><li>TIS T-shirt</li></ul>
+                <p>Everything in Regular, with enhanced comfort and branded items.</p>
+                <ul class="home-tier-benefits"><li>Everything in Regular</li><li>TIS T-shirt + souvenir item</li><li>Reserved seating</li><li>Branded items</li></ul>
               </div>
               <footer class="home-tier-card-footer">
                 <span class="home-ticket-price-label">Early Bird ticket price</span>
                 <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['premium']['ticket_price_kobo']) / 100, 0) ?></strong></p>
                 <small>Per attendee · checkout charges shown before payment</small>
-                <a class="btn btn-primary btn-block home-tier-button" href="/summit-2026?tier=premium#tiers">Reserve Premium <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                <a class="btn btn-primary btn-block home-tier-button" href="/summit-2026?tier=premium#tiers">Reserve VIP <span class="arrow" aria-hidden="true">&rarr;</span></a>
               </footer>
             </article>
 
@@ -231,16 +231,16 @@ $homeTiers = tis_ticket_tiers();
               </header>
               <div class="home-tier-card-body">
                 <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="home-tier-kicker">Signature access</span>
+                <span class="home-tier-kicker">Special session</span>
                 <h3 id="home-vip-title"><?= htmlspecialchars((string) $homeTiers['vip']['label']) ?></h3>
-                <p>The complete package, including priority seating.</p>
-                <ul class="home-tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li><li>Souvenir item</li><li>TIS T-shirt</li><li>Priority seating</li></ul>
+                <p>Exclusive speaker access, premium seating, and special VVIP benefits.</p>
+                <ul class="home-tier-benefits"><li>Everything in VIP</li><li>Exclusive closed-door session with speakers</li><li>Front row VVIP seating</li><li>Certificate of participation</li><li>Professional photo session with speakers</li><li>Exclusive VVIP gift pack</li></ul>
               </div>
               <footer class="home-tier-card-footer">
                 <span class="home-ticket-price-label">Early Bird ticket price</span>
                 <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['vip']['ticket_price_kobo']) / 100, 0) ?></strong></p>
                 <small>Per attendee · checkout charges shown before payment</small>
-                <a class="btn btn-navy btn-block home-tier-button" href="/summit-2026?tier=vip#tiers">Reserve Deluxe <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                <a class="btn btn-navy btn-block home-tier-button" href="/summit-2026?tier=vip#tiers">Reserve VVIP <span class="arrow" aria-hidden="true">&rarr;</span></a>
               </footer>
             </article>
           </div>

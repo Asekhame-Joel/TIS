@@ -4,11 +4,11 @@ The whole website runs on PHP 8.1+ with shared layouts and clean URLs. All ticke
 
 | Tier | Ticket price | Customer pays | Expected Paystack fee | OPay split | Main/Zenith settlement |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Standard Access | NGN 5,000.00 | NGN 5,279.19 | NGN 179.19 | NGN 100.00 | NGN 5,000.00 |
-| Premium Access | NGN 10,000.00 | NGN 10,355.33 | NGN 255.33 | NGN 100.00 | NGN 10,000.00 |
-| VIP Access | NGN 15,000.00 | NGN 15,431.48 | NGN 331.48 | NGN 100.00 | NGN 15,000.00 |
+| Regular | NGN 10,000.00 | NGN 10,355.33 | NGN 255.33 | NGN 100.00 | NGN 10,000.00 |
+| VIP | NGN 20,000.00 | NGN 20,507.62 | NGN 407.62 | NGN 100.00 | NGN 20,000.00 |
+| VVIP (Special Session) | NGN 50,000.00 | NGN 50,964.47 | NGN 864.47 | NGN 100.00 | NGN 50,000.00 |
 
-These are the current **Early Bird prices across all three tiers**; Early Bird is not a separate ticket. The checkout totals gross up Nigeria's current local transaction fee of 1.5% + NGN 100. Keep international payments disabled if the main account must receive the exact listed ticket price, because international card fees are different. If Paystack changes its fees or gives the account custom pricing, update the single `paystack_fee` section and retest all tiers.
+These are the current prices across the three ticket packages. The checkout totals gross up Nigeria's current local transaction fee of 1.5% + NGN 100. Keep international payments disabled if the main account must receive the exact listed ticket price, because international card fees are different. If Paystack changes its fees or gives the account custom pricing, update the single `paystack_fee` section and retest all tiers.
 
 ## Project layout
 
@@ -107,7 +107,7 @@ The webhook validates Paystack's SHA-512 signature and queues the transaction re
 
 Ensure **Pay with Transfer** is enabled if the generated temporary bank-account option should appear. Card and USSD use the first checkout option; bank transfer uses the second.
 
-Do not enable live sales until all of these tests pass for Standard, Premium and VIP:
+Do not enable live sales until all of these tests pass for Regular, VIP and VVIP:
 
 - A successful card payment creates one ticket and sends one email.
 - Reopening the callback URL does not create a second ticket.

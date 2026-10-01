@@ -109,9 +109,9 @@ require __DIR__ . '/_bootstrap.php';
     <div class="field">
       <label for="tier">Tier of interest</label>
       <select id="tier" name="tier">
-        <option value="Standard">Standard</option>
-        <option value="Premium">Premium</option>
-        <option value="Deluxe">Deluxe</option>
+        <option value="Regular">Regular</option>
+        <option value="VIP">VIP</option>
+        <option value="VVIP (Special Session)">VVIP (Special Session)</option>
         <option value="Not sure yet">Not sure yet</option>
       </select>
     </div>
@@ -169,7 +169,7 @@ require __DIR__ . '/_bootstrap.php';
           </div>
           <div class="card" style="margin-top:2rem">
             <h3>Reserving a seat</h3>
-            <p>Early Bird pricing is available across Standard, Premium and Deluxe. For immediate confirmation, book on the Summit 2026 tickets page.</p>
+            <p>Ticket packages are available as Regular, VIP, and VVIP Special Session. For immediate confirmation, book on the Summit 2026 tickets page.</p>
             <div class="card-foot"><a class="btn btn-outline btn-block" href="/summit-2026#tiers">Compare the tiers</a></div>
           </div>
         </div>

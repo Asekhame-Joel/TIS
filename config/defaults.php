@@ -33,20 +33,22 @@ return [
     
     'ticket_tiers' => [
         'standard' => [
-            'label' => 'Standard',
-            'ticket_price_kobo' => 500000,
-            'ticket_prefix' => 'STND',
+            // Internal key remains `standard`; customers see Regular.
+            'label' => 'Regular',
+            'ticket_price_kobo' => 1000000,
+            'ticket_prefix' => 'REG',
         ],
         'premium' => [
-            'label' => 'Premium',
-            'ticket_price_kobo' => 1000000,
-            'ticket_prefix' => 'PREM',
+            // Internal key remains `premium`; customers see VIP.
+            'label' => 'VIP',
+            'ticket_price_kobo' => 2000000,
+            'ticket_prefix' => 'VIP',
         ],
         'vip' => [
             // Keep the `vip` key for existing orders and Paystack split-code compatibility.
-            'label' => 'Deluxe',
-            'ticket_price_kobo' => 1500000,
-            'ticket_prefix' => 'DLX',
+            'label' => 'VVIP (Special Session)',
+            'ticket_price_kobo' => 5000000,
+            'ticket_prefix' => 'VVIP',
         ],
     ],
     'event' => [

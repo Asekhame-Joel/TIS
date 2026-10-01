@@ -33,10 +33,10 @@ final class TicketPdf
 
         $tierSlug = strtolower((string) ($order['tier'] ?? ''));
         $tierBenefits = [
-            'standard' => ['Event access', 'TIS-IUO curated food pack', 'Branded lanyard'],
-            'premium' => ['Event access', 'TIS-IUO curated food pack', 'Branded lanyard', 'TIS T-shirt'],
-            // `vip` remains the internal identifier; customers see the Deluxe label above.
-            'vip' => ['Event access', 'TIS-IUO curated food pack', 'Branded lanyard', 'Souvenir item', 'TIS T-shirt', 'Priority seating'],
+            'standard' => ['Event access', 'TIS curated food pack', 'Branded lanyard', 'Welcome drink on arrival'],
+            'premium' => ['Everything in Regular', 'TIS T-shirt + souvenir item', 'Reserved seating', 'Branded items'],
+            // `vip` remains the internal identifier; customers see the VVIP label above.
+            'vip' => ['Everything in VIP', 'Exclusive closed-door session with speakers', 'Front row VVIP seating', 'Certificate of participation', 'Professional photo session with speakers', 'Exclusive VVIP gift pack'],
         ];
         $benefitsHtml = implode('', array_map(
             static fn (string $benefit): string => '<li>' . $safe($benefit) . '</li>',

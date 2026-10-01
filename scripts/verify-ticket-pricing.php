@@ -5,16 +5,16 @@ require dirname(__DIR__) . '/app/bootstrap.php';
 
 $expected = [
     'standard' => [
-        'ticket_price_kobo' => 500000,
-        'checkout_amount_kobo' => 527919,
-    ],
-    'premium' => [
         'ticket_price_kobo' => 1000000,
         'checkout_amount_kobo' => 1035533,
     ],
+    'premium' => [
+        'ticket_price_kobo' => 2000000,
+        'checkout_amount_kobo' => 2050762,
+    ],
     'vip' => [
-        'ticket_price_kobo' => 1500000,
-        'checkout_amount_kobo' => 1543148,
+        'ticket_price_kobo' => 5000000,
+        'checkout_amount_kobo' => 5096447,
     ],
 ];
 

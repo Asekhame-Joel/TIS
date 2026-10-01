@@ -33,10 +33,10 @@ return [
     ],
 
     'ticket_tiers' => [
-        'standard' => ['label' => 'Standard', 'ticket_price_kobo' => 500000, 'ticket_prefix' => 'STND'],
-        'premium' => ['label' => 'Premium', 'ticket_price_kobo' => 1000000, 'ticket_prefix' => 'PREM'],
-        // Keep the `vip` key: it is the internal Paystack mapping for the Deluxe tier.
-        'vip' => ['label' => 'Deluxe', 'ticket_price_kobo' => 1500000, 'ticket_prefix' => 'DLX'],
+        // The keys are legacy payment identifiers; the labels are customer-facing.
+        'standard' => ['label' => 'Regular', 'ticket_price_kobo' => 1000000, 'ticket_prefix' => 'REG'],
+        'premium' => ['label' => 'VIP', 'ticket_price_kobo' => 2000000, 'ticket_prefix' => 'VIP'],
+        'vip' => ['label' => 'VVIP (Special Session)', 'ticket_price_kobo' => 5000000, 'ticket_prefix' => 'VVIP'],
     ],
 
     'event' => [

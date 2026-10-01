@@ -20,12 +20,12 @@ $vip = $ticketTiers['vip'];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Summit 2026 | The Intellectual Summit</title>
-  <meta name="description" content="Book Early Bird-priced Standard, Premium or Deluxe tickets for The Intellectual Summit 2026 on 14 November at Okunozee Hall, Okada.">
+  <meta name="description" content="Book Regular, VIP, or VVIP Special Session tickets for The Intellectual Summit 2026 on 14 November at Okunozee Hall, Okada.">
   <meta name="theme-color" content="#1b2a4a">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Intellectual Summit">
   <meta property="og:title" content="Summit 2026 | The Intellectual Summit">
-  <meta property="og:description" content="Book Early Bird-priced Standard, Premium or Deluxe tickets for The Intellectual Summit 2026 on 14 November at Okunozee Hall, Okada.">
+  <meta property="og:description" content="Book Regular, VIP, or VVIP Special Session tickets for The Intellectual Summit 2026 on 14 November at Okunozee Hall, Okada.">
   <link rel="canonical" href="/summit-2026">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -576,17 +576,17 @@ $vip = $ticketTiers['vip'];
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
                 <span class="tier-kicker">Essential admission</span>
                 <h3 id="standard-tier-title"><?= htmlspecialchars((string) $standard['label']) ?></h3>
-                <p class="tier-description">Your essential Summit package.</p>
-                <ul class="tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li></ul>
+                <p class="tier-description">Your essential Summit package, including a welcome drink.</p>
+                <ul class="tier-benefits"><li>Event access</li><li>TIS curated food pack</li><li>Branded lanyard</li><li>Welcome drink on arrival</li></ul>
               </div>
               <div class="tier-card-footer">
                 <span class="ticket-price-label">Early Bird ticket price</span>
-                <div class="ticket-price-display" aria-label="Standard costs 5,000 naira before checkout fees">
+                <div class="ticket-price-display" aria-label="Regular costs 10,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $standard['ticket_price_kobo']) / 100, 0) ?></strong>
                 </div>
                 <small class="ticket-price-meta">Per attendee · checkout charges shown before payment</small>
-                <button class="btn btn-outline btn-block tier-buy-button" type="button" data-open-checkout data-tier="standard"><span>Choose Standard</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
+                <button class="btn btn-outline btn-block tier-buy-button" type="button" data-open-checkout data-tier="standard"><span>Choose Regular</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
               </div>
             </article>
 
@@ -602,17 +602,17 @@ $vip = $ticketTiers['vip'];
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
                 <span class="tier-kicker">Elevated experience</span>
                 <h3 id="premium-tier-title"><?= htmlspecialchars((string) $premium['label']) ?></h3>
-                <p class="tier-description">Everything in Standard, plus a TIS T-shirt.</p>
-                <ul class="tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li><li>TIS T-shirt</li></ul>
+                <p class="tier-description">Everything in Regular, with enhanced comfort and branded items.</p>
+                <ul class="tier-benefits"><li>Everything in Regular</li><li>TIS T-shirt + souvenir item</li><li>Reserved seating</li><li>Branded items</li></ul>
               </div>
               <div class="tier-card-footer">
                 <span class="ticket-price-label">Early Bird ticket price</span>
-                <div class="ticket-price-display" aria-label="Premium costs 10,000 naira before checkout fees">
+                <div class="ticket-price-display" aria-label="VIP costs 20,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $premium['ticket_price_kobo']) / 100, 0) ?></strong>
                 </div>
                 <small class="ticket-price-meta">Per attendee · checkout charges shown before payment</small>
-                <button class="btn btn-primary btn-block tier-buy-button" type="button" data-open-checkout data-tier="premium"><span>Choose Premium</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
+                <button class="btn btn-primary btn-block tier-buy-button" type="button" data-open-checkout data-tier="premium"><span>Choose VIP</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
               </div>
             </article>
 
@@ -623,19 +623,19 @@ $vip = $ticketTiers['vip'];
               </div>
               <div class="tier-card-body">
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
-                <span class="tier-kicker">Signature access</span>
+                <span class="tier-kicker">Special session</span>
                 <h3 id="vip-tier-title"><?= htmlspecialchars((string) $vip['label']) ?></h3>
-                <p class="tier-description">The complete package, including priority seating.</p>
-                <ul class="tier-benefits"><li>Event access</li><li>TIS-IUO curated food pack</li><li>Branded lanyard</li><li>Souvenir item</li><li>TIS T-shirt</li><li>Priority seating</li></ul>
+                <p class="tier-description">Exclusive speaker access, premium seating, and special VVIP benefits.</p>
+                <ul class="tier-benefits"><li>Everything in VIP</li><li>Exclusive closed-door session with speakers</li><li>Front row VVIP seating</li><li>Certificate of participation</li><li>Professional photo session with speakers</li><li>Exclusive VVIP gift pack</li></ul>
               </div>
               <div class="tier-card-footer">
                 <span class="ticket-price-label">Early Bird ticket price</span>
-                <div class="ticket-price-display" aria-label="Deluxe costs 15,000 naira before checkout fees">
+                <div class="ticket-price-display" aria-label="VVIP Special Session costs 50,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $vip['ticket_price_kobo']) / 100, 0) ?></strong>
                 </div>
                 <small class="ticket-price-meta">Per attendee · checkout charges shown before payment</small>
-                <button class="btn btn-outline btn-block tier-buy-button" type="button" data-open-checkout data-tier="vip"><span>Choose Deluxe</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
+                <button class="btn btn-outline btn-block tier-buy-button" type="button" data-open-checkout data-tier="vip"><span>Choose VVIP</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
               </div>
             </article>
           </div>
@@ -647,13 +647,13 @@ $vip = $ticketTiers['vip'];
       <div class="container day-covers">
         <div class="reveal">
           <span class="eyebrow">What the day covers</span>
-          <h2>Every ticket includes thoughtful Summit essentials.</h2>
-          <p class="lead">All tiers include event access, a TIS-IUO curated food pack, and a branded lanyard. Premium adds a TIS T-shirt; Deluxe also includes a souvenir item and priority seating.</p>
+          <h2>Every ticket has a distinct Summit experience.</h2>
+          <p class="lead">Regular provides the essentials. VIP adds comfort and branded items. VVIP includes the Special Session with speakers and premium attendee benefits.</p>
           <ul class="check-list" style="margin-top:1.75rem">
-            <li>Standard: event access, food pack, and branded lanyard</li>
-            <li>Premium: all Standard items plus a TIS T-shirt</li>
-            <li>Deluxe: all Premium items plus a souvenir item</li>
-            <li>Deluxe includes priority seating</li>
+            <li>Regular: event access, curated food pack, lanyard, and welcome drink</li>
+            <li>VIP: everything in Regular, T-shirt and souvenir, reserved seating, and branded items</li>
+            <li>VVIP: everything in VIP plus the exclusive closed-door speaker session</li>
+            <li>VVIP also includes front row seating, certificate, photo session, and gift pack</li>
           </ul>
         </div>
         <aside class="reservation-card reveal reveal-delay-1" aria-label="Reserve a seat">

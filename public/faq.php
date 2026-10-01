@@ -55,7 +55,7 @@ require __DIR__ . '/_bootstrap.php';
           </details>
           <details class="faq reveal">
             <summary>What access tiers are available?</summary>
-            <div class="faq-body"><p>Three: Standard, Premium, and Deluxe. Every tier includes event access, a TIS-IUO curated food pack, and a branded lanyard. Premium also includes a TIS T-shirt. Deluxe includes everything in Premium, plus a souvenir item and priority seating.</p></div>
+            <div class="faq-body"><p>Three: Regular, VIP, and VVIP Special Session. Regular includes event access, a TIS curated food pack, a branded lanyard, and a welcome drink. VIP includes everything in Regular, plus a TIS T-shirt, souvenir item, reserved seating, and branded items. VVIP includes everything in VIP, plus a closed-door session with speakers, front row VVIP seating, a certificate, a professional photo session, and an exclusive gift pack.</p></div>
           </details>
           <details class="faq reveal">
             <summary>Is seating limited?</summary>
