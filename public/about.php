@@ -136,7 +136,7 @@ require __DIR__ . '/_bootstrap.php';
             <div>
               <span class="eyebrow">Next step</span>
               <h2>Come and think in the room with us.</h2>
-              <p class="lead">The 2026 Summit is one day in Okada, with Early Bird pricing across three tiers and limited seating.</p>
+              <p class="lead">The 2026 Summit is one day in Okada, with  pricing across three tiers and limited seating.</p>
             </div>
             <div class="btn-row" style="flex-direction:column;align-items:stretch">
               <a class="btn btn-primary btn-block" href="/summit-2026#tiers">Reserve a seat <span class="arrow" aria-hidden="true">&rarr;</span></a>

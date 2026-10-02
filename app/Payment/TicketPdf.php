@@ -136,7 +136,7 @@ body { margin: 0; background: #0f1b31; color: #172238; font-family: DejaVu Sans,
             <div class="brand-mark"><span class="bar-one"></span><span class="bar-two"></span><span class="bar-three"></span></div>
             <div class="brand-name">THE INTELLECTUAL SUMMIT</div>
             <div class="brand-tagline">GLOBAL RELEVANCE</div>
-            <div class="verified-pill">EARLY BIRD / VERIFIED</div>
+            <div class="verified-pill"> / VERIFIED</div>
         </div>
         <div class="hero-copy">
             <div class="tier-line">{$tierLabel}</div>

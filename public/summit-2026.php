@@ -556,7 +556,7 @@ $vip = $ticketTiers['vip'];
         <div class="ticket-showcase reveal">
           <div class="tier-announcement">
             <div class="tier-announcement-copy">
-              <span class="eyebrow">Early Bird pricing now available</span>
+              <span class="eyebrow"> pricing now available</span>
               <h2>Choose your access and book securely.</h2>
             </div>
             <div class="ticket-event-seal" aria-label="Summit 2026, 14 November, Okada">
@@ -569,7 +569,7 @@ $vip = $ticketTiers['vip'];
           <div class="tier-grid" id="ticket-options">
             <article class="tier-card standard" aria-labelledby="standard-tier-title">
               <div class="tier-card-header">
-                <div class="tier-badges"><span class="tier-flag">Early Bird</span></div>
+                <div class="tier-badges"><span class="tier-flag"></span></div>
                 <span class="tier-number" aria-hidden="true">01</span>
               </div>
               <div class="tier-card-body">
@@ -580,7 +580,7 @@ $vip = $ticketTiers['vip'];
                 <ul class="tier-benefits"><li>Event access</li><li>TIS curated food pack</li><li>Branded lanyard</li><li>Welcome drink on arrival</li></ul>
               </div>
               <div class="tier-card-footer">
-                <span class="ticket-price-label">Early Bird ticket price</span>
+                <span class="ticket-price-label"> ticket price</span>
                 <div class="ticket-price-display" aria-label="Regular costs 10,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $standard['ticket_price_kobo']) / 100, 0) ?></strong>
@@ -593,7 +593,7 @@ $vip = $ticketTiers['vip'];
             <article class="tier-card featured" aria-labelledby="premium-tier-title">
               <div class="tier-card-header">
                 <div class="tier-badges">
-                  <span class="tier-flag">Early Bird</span>
+                  <span class="tier-flag"></span>
                   <span class="tier-popular">Most chosen</span>
                 </div>
                 <span class="tier-number" aria-hidden="true">02</span>
@@ -606,7 +606,7 @@ $vip = $ticketTiers['vip'];
                 <ul class="tier-benefits"><li>Everything in Regular</li><li>TIS T-shirt + souvenir item</li><li>Reserved seating</li><li>Branded items</li></ul>
               </div>
               <div class="tier-card-footer">
-                <span class="ticket-price-label">Early Bird ticket price</span>
+                <span class="ticket-price-label"> ticket price</span>
                 <div class="ticket-price-display" aria-label="VIP costs 20,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $premium['ticket_price_kobo']) / 100, 0) ?></strong>
@@ -618,7 +618,7 @@ $vip = $ticketTiers['vip'];
 
             <article class="tier-card vip" aria-labelledby="vip-tier-title">
               <div class="tier-card-header">
-                <div class="tier-badges"><span class="tier-flag">Early Bird</span></div>
+                <div class="tier-badges"><span class="tier-flag"></span></div>
                 <span class="tier-number" aria-hidden="true">03</span>
               </div>
               <div class="tier-card-body">
@@ -629,7 +629,7 @@ $vip = $ticketTiers['vip'];
                 <ul class="tier-benefits"><li>Everything in VIP</li><li>Exclusive closed-door session with speakers</li><li>Front row VVIP seating</li><li>Certificate of participation</li><li>Professional photo session with speakers</li><li>Exclusive VVIP gift pack</li></ul>
               </div>
               <div class="tier-card-footer">
-                <span class="ticket-price-label">Early Bird ticket price</span>
+                <span class="ticket-price-label"> ticket price</span>
                 <div class="ticket-price-display" aria-label="VVIP Special Session costs 50,000 naira before checkout fees">
                   <span>NGN</span>
                   <strong><?= number_format(((int) $vip['ticket_price_kobo']) / 100, 0) ?></strong>
