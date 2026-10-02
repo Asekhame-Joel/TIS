@@ -568,10 +568,7 @@ $vip = $ticketTiers['vip'];
 
           <div class="tier-grid" id="ticket-options">
             <article class="tier-card standard" aria-labelledby="standard-tier-title">
-              <div class="tier-card-header">
-                <div class="tier-badges"><span class="tier-flag"></span></div>
-                <span class="tier-number" aria-hidden="true">01</span>
-              </div>
+          
               <div class="tier-card-body">
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
                 <span class="tier-kicker">Essential admission</span>
@@ -593,10 +590,8 @@ $vip = $ticketTiers['vip'];
             <article class="tier-card featured" aria-labelledby="premium-tier-title">
               <div class="tier-card-header">
                 <div class="tier-badges">
-                  <span class="tier-flag"></span>
                   <span class="tier-popular">Most chosen</span>
                 </div>
-                <span class="tier-number" aria-hidden="true">02</span>
               </div>
               <div class="tier-card-body">
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -617,10 +612,7 @@ $vip = $ticketTiers['vip'];
             </article>
 
             <article class="tier-card vip" aria-labelledby="vip-tier-title">
-              <div class="tier-card-header">
-                <div class="tier-badges"><span class="tier-flag"></span></div>
-                <span class="tier-number" aria-hidden="true">03</span>
-              </div>
+
               <div class="tier-card-body">
                 <div class="tier-brand-mark" aria-hidden="true"><i></i><i></i><i></i></div>
                 <span class="tier-kicker">Special session</span>
