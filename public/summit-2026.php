@@ -556,7 +556,7 @@ $vip = $ticketTiers['vip'];
         <div class="ticket-showcase reveal">
           <div class="tier-announcement">
             <div class="tier-announcement-copy">
-              <span class="eyebrow">Early Bird pricing now available</span>
+              <span class="eyebrow"> pricing now available</span>
               <h2>Choose your access and book securely.</h2>
             </div>
             <div class="ticket-event-seal" aria-label="Summit 2026, 14 November, Okada">
@@ -569,7 +569,7 @@ $vip = $ticketTiers['vip'];
           <div class="tier-grid" id="ticket-options">
             <article class="tier-card standard" aria-labelledby="standard-tier-title">
               <div class="tier-card-header">
-                <div class="tier-badges"><span class="tier-flag">Early Bird</span></div>
+                <div class="tier-badges"><span class="tier-flag"></span></div>
                 <span class="tier-number" aria-hidden="true">01</span>
               </div>
               <div class="tier-card-body">
@@ -593,7 +593,7 @@ $vip = $ticketTiers['vip'];
             <article class="tier-card featured" aria-labelledby="premium-tier-title">
               <div class="tier-card-header">
                 <div class="tier-badges">
-                  <span class="tier-flag">Early Bird</span>
+                  <span class="tier-flag"></span>
                   <span class="tier-popular">Most chosen</span>
                 </div>
                 <span class="tier-number" aria-hidden="true">02</span>
@@ -618,7 +618,7 @@ $vip = $ticketTiers['vip'];
 
             <article class="tier-card vip" aria-labelledby="vip-tier-title">
               <div class="tier-card-header">
-                <div class="tier-badges"><span class="tier-flag">Early Bird</span></div>
+                <div class="tier-badges"><span class="tier-flag"></span></div>
                 <span class="tier-number" aria-hidden="true">03</span>
               </div>
               <div class="tier-card-body">
