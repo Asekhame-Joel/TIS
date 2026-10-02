@@ -186,10 +186,7 @@ $homeTiers = tis_ticket_tiers();
         <div class="home-ticket-showcase reveal" aria-label="Summit 2026 ticket options">
           <div class="home-tier-grid">
             <article class="home-tier-card home-tier-standard reveal reveal-delay-0" aria-labelledby="home-standard-title">
-              <header class="home-tier-card-header">
-                <span class="home-tier-flag"></span>
-                <span class="home-tier-number" aria-hidden="true">01</span>
-              </header>
+        
               <div class="home-tier-card-body">
                 <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
                 <span class="home-tier-kicker">Essential admission</span>
@@ -198,7 +195,7 @@ $homeTiers = tis_ticket_tiers();
                 <ul class="home-tier-benefits"><li>Event access</li><li>TIS curated food pack</li><li>Branded lanyard</li><li>Welcome drink on arrival</li></ul>
               </div>
               <footer class="home-tier-card-footer">
-                <span class="home-ticket-price-label"> ticket price</span>
+                <span class="home-ticket-price-label"></span>
                 <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['standard']['ticket_price_kobo']) / 100, 0) ?></strong></p>
                 <small>Per attendee · checkout charges shown before payment</small>
                 <a class="btn btn-outline btn-block home-tier-button" href="/summit-2026?tier=standard#tiers">Reserve Regular <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -206,10 +203,7 @@ $homeTiers = tis_ticket_tiers();
             </article>
 
             <article class="home-tier-card home-tier-featured reveal reveal-delay-1" aria-labelledby="home-premium-title">
-              <header class="home-tier-card-header">
-                <span class="home-tier-flags"><span class="home-tier-flag"></span><span class="home-tier-popular">Most chosen</span></span>
-                <span class="home-tier-number" aria-hidden="true">02</span>
-              </header>
+            
               <div class="home-tier-card-body">
                 <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
                 <span class="home-tier-kicker">Elevated experience</span>
@@ -218,7 +212,7 @@ $homeTiers = tis_ticket_tiers();
                 <ul class="home-tier-benefits"><li>Everything in Regular</li><li>TIS T-shirt + souvenir item</li><li>Reserved seating</li><li>Branded items</li></ul>
               </div>
               <footer class="home-tier-card-footer">
-                <span class="home-ticket-price-label"> ticket price</span>
+                <span class="home-ticket-price-label"></span>
                 <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['premium']['ticket_price_kobo']) / 100, 0) ?></strong></p>
                 <small>Per attendee · checkout charges shown before payment</small>
                 <a class="btn btn-primary btn-block home-tier-button" href="/summit-2026?tier=premium#tiers">Reserve VIP <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -226,10 +220,7 @@ $homeTiers = tis_ticket_tiers();
             </article>
 
             <article class="home-tier-card home-tier-vip reveal reveal-delay-2" aria-labelledby="home-vip-title">
-              <header class="home-tier-card-header">
-                <span class="home-tier-flag"></span>
-                <span class="home-tier-number" aria-hidden="true">03</span>
-              </header>
+          
               <div class="home-tier-card-body">
                 <span class="home-tier-mark" aria-hidden="true"><i></i><i></i><i></i></span>
                 <span class="home-tier-kicker">Special session</span>
@@ -238,7 +229,7 @@ $homeTiers = tis_ticket_tiers();
                 <ul class="home-tier-benefits"><li>Everything in VIP</li><li>Exclusive closed-door session with speakers</li><li>Front row VVIP seating</li><li>Certificate of participation</li><li>Professional photo session with speakers</li><li>Exclusive VVIP gift pack</li></ul>
               </div>
               <footer class="home-tier-card-footer">
-                <span class="home-ticket-price-label"> ticket price</span>
+                <span class="home-ticket-price-label"></span>
                 <p class="home-ticket-price"><span>NGN</span><strong><?= number_format(((int) $homeTiers['vip']['ticket_price_kobo']) / 100, 0) ?></strong></p>
                 <small>Per attendee · checkout charges shown before payment</small>
                 <a class="btn btn-navy btn-block home-tier-button" href="/summit-2026?tier=vip#tiers">Reserve VVIP <span class="arrow" aria-hidden="true">&rarr;</span></a>
