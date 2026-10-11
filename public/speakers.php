@@ -8,12 +8,12 @@ require __DIR__ . '/_bootstrap.php';
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Speakers &amp; Panelists | The Intellectual Summit</title>
-  <meta name="description" content="Meet the speakers, panelists, moderators and special guests of The Intellectual Summit 2026 — with more voices unveiled in the run up to 7 November.">
+  <meta name="description" content="Meet the speakers and panelists bringing insight, experience and fresh perspectives to The Intellectual Summit 2026.">
   <meta name="theme-color" content="#1b2a4a">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Intellectual Summit">
   <meta property="og:title" content="Speakers &amp; Panelists | The Intellectual Summit">
-  <meta property="og:description" content="Meet the thought leaders, innovators and voices shaping The Intellectual Summit 2026.">
+  <meta property="og:description" content="Meet the voices shaping The Intellectual Summit 2026.">
   <link rel="canonical" href="/speakers">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,166 +21,194 @@ require __DIR__ . '/_bootstrap.php';
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
-<body>
+<body class="speakers-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <?php tis_render_header('speakers'); ?>
+
   <main id="main">
-    <section class="hero hero-page">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <span>Speakers &amp; Panelists</span></nav>
-        <span class="eyebrow">Summit 2026 &middot; The line up</span>
-        <h1>Meet the voices shaping <em>the room</em>.</h1>
-        <p class="lead">Thought leaders, practitioners, innovators and young voices who will speak, sit on the panel and moderate the conversation at The Intellectual Summit 2026. Some are announced. The rest are being unveiled one at a time.</p>
-        <div class="btn-row" style="margin-top:2rem">
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-white">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Keynote</span>
-          <h2>Keynote speaker</h2>
-          <p class="lead">The voices setting the tone for the day.</p>
-        </div>
-        <div class="grid speaker-grid">
-          <article class="speaker-card reveal">
-            <div class="speaker-media">
-              <span class="speaker-badge">Keynote &middot; Host</span>
-              <img src="/assets/images/gold.png" alt="Dr Jochebed Emuveyan, Founder of The Intellectual Summit" loading="lazy">
-            </div>
-            <div class="speaker-body">
-              <h3>Dr Jochebed Emuveyan</h3>
-              <p class="speaker-role">Founder &amp; Host</p>
-              <p class="speaker-org">The Intellectual Summit &middot; Igbinedion University</p>
-              <p class="speaker-bio">Scholar, leadership coach and founder of TIS. She holds a PhD in International Relations from Igbinedion University, where she also lectures and mentors students, and she builds spaces where young people learn to think critically, lead confidently and live with purpose.</p>
-              <div class="speaker-links">
-                <a href="/about" aria-label="Read the full profile of Dr Jochebed Emuveyan"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg></a>
-                <a href="/contact" aria-label="Contact The Intellectual Summit"><svg viewBox="0 0 24 24"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5zM4.6 6l7.4 5.4L19.4 6z"/></svg></a>
-              </div>
-            </div>
-          </article>
-         
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-cream">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Guest speakers</span>
-          <h2>Guest speakers</h2>
-          <p class="lead">Invited voices bringing practice, not theory, to the stage.</p>
-        </div>
-        <div class="grid speaker-grid">
-          <article class="speaker-card is-mystery reveal">
-            <div class="mystery-media">
-              <span class="speaker-badge is-quiet">Guest speaker</span>
-              <span class="mystery-curtain" aria-hidden="true"></span>
-              <svg class="mystery-silhouette" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.6V22h16v-2.4c0-3.1-3.6-5.6-8-5.6z"/></svg>
-              <span class="mystery-mark" aria-hidden="true">?</span>
-            </div>
-            <div class="speaker-body">
-              <h3>Another Voice Joins the Conversation</h3>
-              <p class="speaker-role">Guest speaker reveal coming soon</p>
-              <p class="speaker-bio">A practitioner sharing the road from clarity of purpose to visible work.</p>
-            </div>
-          </article>
-          <article class="speaker-card is-mystery reveal">
-            <div class="mystery-media">
-              <span class="speaker-badge is-quiet">Guest speaker</span>
-              <span class="mystery-curtain" aria-hidden="true"></span>
-              <svg class="mystery-silhouette" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.6V22h16v-2.4c0-3.1-3.6-5.6-8-5.6z"/></svg>
-              <span class="mystery-mark" aria-hidden="true">?</span>
-            </div>
-            <div class="speaker-body">
-              <h3>Stay Tuned for the Big Reveal</h3>
-              <p class="speaker-role">Guest speaker reveal coming soon</p>
-              <p class="speaker-bio">A voice on communication, confidence and speaking in rooms that matter.</p>
-            </div>
-          </article>
-          <article class="speaker-card is-mystery reveal">
-            <div class="mystery-media">
-              <span class="speaker-badge is-quiet">Guest speaker</span>
-              <span class="mystery-curtain" aria-hidden="true"></span>
-              <svg class="mystery-silhouette" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.6V22h16v-2.4c0-3.1-3.6-5.6-8-5.6z"/></svg>
-              <span class="mystery-mark" aria-hidden="true">?</span>
-            </div>
-            <div class="speaker-body">
-              <h3>To Be Unveiled</h3>
-              <p class="speaker-role">Guest speaker reveal coming soon</p>
-              <p class="speaker-bio">An invited guest whose story stretches ambition past the local.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-white">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">The panel</span>
-          <h2>Panelists</h2>
-          <p class="lead">A cross section of perspectives in one honest conversation.</p>
-        </div>
-        <div class="grid speaker-grid">
-          <article class="speaker-card is-mystery reveal">
-            <div class="mystery-media">
-              <span class="speaker-badge is-quiet">Panelist</span>
-              <span class="mystery-curtain" aria-hidden="true"></span>
-              <svg class="mystery-silhouette" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.6V22h16v-2.4c0-3.1-3.6-5.6-8-5.6z"/></svg>
-              <span class="mystery-mark" aria-hidden="true">?</span>
-            </div>
-            <div class="speaker-body">
-              <h3>Panelist One</h3>
-              <p class="speaker-role">To be unveiled</p>
-              <p class="speaker-bio">Joining the main panel on building a globally relevant career from Nigeria.</p>
-            </div>
-          </article>
-          <article class="speaker-card is-mystery reveal">
-            <div class="mystery-media">
-              <span class="speaker-badge is-quiet">Panelist</span>
-              <span class="mystery-curtain" aria-hidden="true"></span>
-              <svg class="mystery-silhouette" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.6V22h16v-2.4c0-3.1-3.6-5.6-8-5.6z"/></svg>
-              <span class="mystery-mark" aria-hidden="true">?</span>
-            </div>
-            <div class="speaker-body">
-              <h3>Panelist Two</h3>
-              <p class="speaker-role">To be unveiled</p>
-              <p class="speaker-bio">Bringing a practitioner’s view on mentorship, discipline and momentum.</p>
-            </div>
-          </article>
-          <article class="speaker-card is-mystery reveal">
-            <div class="mystery-media">
-              <span class="speaker-badge is-quiet">Panelist</span>
-              <span class="mystery-curtain" aria-hidden="true"></span>
-              <svg class="mystery-silhouette" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.5-8 5.6V22h16v-2.4c0-3.1-3.6-5.6-8-5.6z"/></svg>
-              <span class="mystery-mark" aria-hidden="true">?</span>
-            </div>
-            <div class="speaker-body">
-              <h3>Panelist Three</h3>
-              <p class="speaker-role">To be unveiled</p>
-              <p class="speaker-bio">A young leader speaking to the realities of starting before you feel ready.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-  
-
-    <section class="section section-white">
-      <div class="container">
-        <div class="cta-banner reveal">
-          <span class="eyebrow" style="color:var(--gold-bright)">The reveal</span>
-          <h2 style="color:#fff;max-width:20ch">More names are being unveiled in the run up to 7 November.</h2>
-          <p style="max-width:56ch">Speaker announcements are released one at a time. Keep checking this page, or send us a note and we will let you know the moment a new voice is added to the line up.</p>
-          <div class="btn-row" style="margin-top:1.75rem">
-            <a class="btn btn-primary" href="/contact">Notify me <span class="arrow" aria-hidden="true">&rarr;</span></a>
-            <a class="btn btn-outline" href="/summit-2026">See the summit page</a>
+    <section class="speaker-hero">
+      <div class="container speaker-hero-inner">
+        <div class="speaker-hero-copy reveal">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <span>Speakers &amp; Panelists</span></nav>
+          <span class="eyebrow">Summit 2026 &middot; The line-up</span>
+          <h1>Meet the voices shaping <em>the room</em>.</h1>
+          <p class="lead">A carefully selected company of speakers and panelists bringing lived experience, bold ideas and practical insight to The Intellectual Summit 2026.</p>
+          <div class="speaker-hero-stats" aria-label="Event line-up summary">
+            <div><strong>03</strong><span>Speakers</span></div>
+            <div><strong>02</strong><span>Panelists</span></div>
+            <div><strong>01</strong><span>Keynote host</span></div>
           </div>
-          <div class="reveal-strip">
-            <span>Keynote reveal</span><span>Guest speakers</span><span>Panel line up</span><span>Moderators</span>
+        </div>
+        <div class="speaker-hero-art reveal reveal-delay-1" aria-hidden="true">
+          <span class="speaker-orbit orbit-one"></span>
+          <span class="speaker-orbit orbit-two"></span>
+          <div class="speaker-theme-mark"><small>2026 theme</small><strong>The student,<br>the journey,<br>the destination.</strong></div>
+          <span class="speaker-hero-number">06</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section speaker-keynote-section">
+      <div class="container">
+        <article class="keynote-feature reveal">
+          <div class="keynote-portrait">
+            <img src="/assets/images/gold.png" alt="Dr Jochebed Emuveyan, founder and host of The Intellectual Summit" width="900" height="1125">
+            <span class="profile-number" aria-hidden="true">01</span>
+          </div>
+          <div class="keynote-copy">
+            <span class="profile-kicker">Keynote &middot; Founder &amp; Host</span>
+            <h2>Dr Jochebed Emuveyan</h2>
+            <p class="profile-title">The Intellectual Summit &middot; Igbinedion University</p>
+            <p class="profile-intro">Scholar, leadership coach and founder of TIS. She holds a PhD in International Relations from Igbinedion University, where she also lectures and mentors students.</p>
+            <p>She builds spaces where young people learn to think critically, lead confidently and live with purpose.</p>
+            <a class="profile-link" href="/about">Discover the story behind TIS <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section speaker-lineup-section" id="speakers">
+      <div class="container">
+        <header class="lineup-heading reveal">
+          <div>
+            <span class="eyebrow">On the main stage</span>
+            <h2>Featured speakers</h2>
+          </div>
+          <p>Distinct voices, one shared commitment to helping young people move from potential to purposeful impact.</p>
+        </header>
+
+        <div class="editorial-lineup">
+          <article class="editorial-profile is-featured reveal">
+            <div class="editorial-photo">
+              <img src="/assets/images/speakers/victory-ashaka.webp" alt="Victory Ashaka" width="1080" height="1350" loading="lazy">
+              <span class="profile-number" aria-hidden="true">02</span>
+            </div>
+            <div class="editorial-copy">
+              <span class="profile-kicker">Speaker</span>
+              <h3>Victory Ashaka</h3>
+              <p class="profile-title">Spoken-word poet, youth advisor and Global Youth Ambassador</p>
+              <p class="profile-intro"><strong>Victory Ashaka</strong> is a multi-award-winning spoken word poet, youth advisor to the European Union, poetry slam champion, Global Youth Ambassador of Theirworld and an erstwhile member of the Young People’s Action Team of UNICEF Generation Unlimited (YPAT).</p>
+              <details class="profile-details">
+                <summary>Read full profile <span aria-hidden="true">+</span></summary>
+                <div class="profile-details-body">
+                  <p>Victory is a graduate of English Literature from Lagos State University and a certified Leadership Fellow from the Management Institute of Finland in Helsinki.</p>
+                  <p>He is a Diana Award Recipient, recipient of the Lord’s Achievers Award for Literature and the Future Awards Africa Prize for Young Person of the Year. He has been featured as a poet laureate and spoken-word artist on platforms including the United Nations, UNICEF, FAO, TEDx, TRT World Forum, Italian Consulate, British Deputy High Commission and the Aso Rock Presidential Villa.</p>
+                  <p>In 2026, Victory released his debut spoken-word EP, <em>The Moving Man</em>, following an intimate Global Listening Party that brought together guests and supporters to experience the project before its official release.</p>
+                  <p>The project marks a new chapter in his artistic journey, blending storytelling, purpose, becoming and lived experiences through spoken word.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="editorial-profile is-reversed reveal">
+            <div class="editorial-photo king-ken-photo">
+              <img src="/assets/images/speakers/king-ken-event.png" alt="King Ken, speaker at The Intellectual Summit 2026" width="1620" height="2025" loading="lazy">
+              <span class="profile-number" aria-hidden="true">03</span>
+            </div>
+            <div class="editorial-copy">
+              <span class="profile-kicker">Speaker</span>
+              <h3>King Ken</h3>
+              <p class="profile-title">Leadership Architect, Brand Strategist and Creative Director</p>
+              <p class="profile-intro"><strong>King Ken</strong> is a seasoned Leadership Architect, Brand Strategist, and Creative Director/Art Director, and the visionary behind Grafixlodge Studios and Elevatia Academy. With over 22 years of experience, he has built a reputation for shaping high-performance environments and driving transformational outcomes through strategy, influence, and elevated thinking.</p>
+              <details class="profile-details">
+                <summary>Read full profile <span aria-hidden="true">+</span></summary>
+                <div class="profile-details-body">
+                  <p>His expertise lies in Disruptive Thinking—a refined approach to challenging outdated paradigms, dismantling limiting structures, and developing forward-focused mindsets. He combines strategic clarity, creative insight, and disciplined execution to help individuals and organizations unlock greater capacity and achieve lasting results.</p>
+                  <p>As a leader and facilitator, King Ken is known for building high-performing teams, implementing structured systems, and cultivating cultures of accountability, precision, speed, and excellence. He works with corporate professionals and leaders to navigate paradigm shifts, strengthen performance, and translate bold ideas into measurable outcomes.</p>
+                  <p>His mission is clear: to transform minds, elevate standards, and engineer influence that creates distinction and lasting impact.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="editorial-profile reveal">
+            <div class="editorial-photo">
+              <img src="/assets/images/speakers/obi.webp" alt="Obi, Osuchukwu Kenechukwu Obiagboso" width="1080" height="1350" loading="lazy">
+              <span class="profile-number" aria-hidden="true">04</span>
+            </div>
+            <div class="editorial-copy">
+              <span class="profile-kicker">Speaker</span>
+              <h3>Obi</h3>
+              <p class="profile-title">Final-year medical student, student leader and leadership advocate</p>
+              <p class="profile-intro"><strong>Osuchukwu Kenechukwu Obiagboso</strong> currently serves as the 15th President of the Igbinedion University Medical Students Association (IUMSA), where he champions student engagement, academic excellence, inclusivity, leadership development and institutional growth.</p>
+              <details class="profile-details">
+                <summary>Read full profile <span aria-hidden="true">+</span></summary>
+                <div class="profile-details-body">
+                  <p>His leadership experience includes serving as Assistant General Secretary and Vice President of IUMSA, Assistant National Secretary of the NiMSA Directorate of Climate Awareness and Advocacy Programme, and Deputy Regional Coordinator for the South-South Region of the Nigerian Medical Students’ Association, supporting the welfare of over 5,000 medical students across 12 medical schools.</p>
+                  <p>He is also the pioneer IUMSA Liaison Officer to FAMSA and pioneer licensee of TEDx Igbinedion University. Through leadership and service, he advocates for discipline, adaptability, collaboration and intentional personal growth—encouraging students to look beyond titles and certificates and become individuals who create opportunities, empower others and leave their communities better than they found them.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panelists-section" id="panelists">
+      <div class="container">
+        <header class="lineup-heading lineup-heading-light reveal">
+          <div>
+            <span class="eyebrow">In conversation</span>
+            <h2>Meet the panelists</h2>
+          </div>
+          <p>Leaders working across youth development, education, healthcare, research and community impact.</p>
+        </header>
+
+        <div class="panelist-grid">
+          <article class="panelist-profile reveal">
+            <div class="panelist-photo">
+              <img src="/assets/images/speakers/bukola-aladesulu.webp" alt="Amb Bukola Aladesulu" width="1080" height="1350" loading="lazy">
+              <span class="panelist-label">Panelist</span>
+            </div>
+            <div class="panelist-copy">
+              <span class="profile-number" aria-hidden="true">05</span>
+              <h3>Amb Bukola Aladesulu</h3>
+              <p class="profile-title">Global advocate for youth development</p>
+              <p class="profile-intro"><strong>Bukola Aladesulu</strong> works around youth economic empowerment, opportunity access, workforce and leadership development, helping young Africans build the skills, networks and pathways they need to thrive.</p>
+              <details class="profile-details profile-details-dark">
+                <summary>Read full profile <span aria-hidden="true">+</span></summary>
+                <div class="profile-details-body">
+                  <p>She is the Executive Director of Unthrive, a development hub that has empowered over 2,000 young people across eleven countries through learning, mentorship, funding and career opportunities since 2023.</p>
+                  <p>She is a TheirWorld Global Youth Ambassador. She has also served as a Lagos State Youth Ambassador; she led her division in raising over $10,000 to implement ten youth-focused projects, reaching more than 10,000 young people across Nigeria, and was recognised as Youth Ambassador of the Year.</p>
+                  <p>Bukola is a Global Ambassador for Peace and was named one of the 2026 JCI Ten Outstanding Young Persons in Nigeria. She is a TEDx-recognised speaker, a Carrington Youth Fellowship Initiative alumna, and a Mini MBA graduate of Queen's University, Canada, where she graduated as the second-best fellow.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="panelist-profile reveal reveal-delay-1">
+            <div class="panelist-photo">
+              <img src="/assets/images/speakers/dr-harmony-ibezim.webp" alt="Dr Harmony U. Ibezim" width="1080" height="1350" loading="lazy">
+              <span class="panelist-label">Panelist</span>
+            </div>
+            <div class="panelist-copy">
+              <span class="profile-number" aria-hidden="true">06</span>
+              <h3>Dr Harmony U. Ibezim</h3>
+              <p class="profile-title">Medical doctor, clinical biochemist, lecturer and researcher</p>
+              <p class="profile-intro"><strong>Dr Harmony Uchenna Ibezim</strong> is a mentor and youth development advocate with a strong commitment to empowering young people to become confident, informed and impactful leaders.</p>
+              <details class="profile-details profile-details-dark">
+                <summary>Read full profile <span aria-hidden="true">+</span></summary>
+                <div class="profile-details-body">
+                  <p>He is a Lecturer in the Department of Biochemistry at Igbinedion University, Okada, and a Senior Medical Officer in the Department of Medicine at Igbinedion University Teaching Hospital. His professional work sits at the intersection of healthcare, education, research and community development, with research interests spanning metabolic medicine, public health, toxicology and emerging health challenges in underserved communities.</p>
+                  <p>Beyond his professional career, Dr Ibezim is deeply passionate about youth empowerment, mentorship, leadership, education, public speaking and personal development. He has worked with students and young people through mentorship, leadership initiatives, academic programmes and youth-focused development projects, helping them build confidence, communicate effectively and recognise their capacity to influence their communities.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white speakers-cta-section">
+      <div class="container">
+        <div class="cta-banner speakers-cta reveal">
+          <div>
+            <span class="eyebrow" style="color:var(--gold-bright)">Be in the room</span>
+            <h2>Hear the ideas. Meet the people. Join the conversation.</h2>
+          </div>
+          <div class="speakers-cta-actions">
+            <a class="btn btn-primary" href="/summit-2026#tiers">Reserve your seat <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-outline" href="/summit-2026">Explore Summit 2026</a>
           </div>
         </div>
       </div>
@@ -188,7 +216,6 @@ require __DIR__ . '/_bootstrap.php';
   </main>
 
   <?php tis_render_footer(); ?>
-
   <script src="/assets/js/main.js"></script>
 </body>
 </html>

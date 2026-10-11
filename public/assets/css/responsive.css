@@ -106,8 +106,43 @@
 /* -------- speakers page -------- */
 @media (max-width: 1024px) {
   .speaker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .speaker-hero-inner { grid-template-columns: 1fr; }
+  .speaker-hero-copy { max-width: 48rem; }
+  .speaker-hero-art { min-height: 25rem; }
+  .speaker-theme-mark { width: min(100%, 28rem); }
+  .keynote-feature { grid-template-columns: minmax(17rem, .8fr) minmax(0, 1.2fr); }
+  .editorial-profile,
+  .editorial-profile.is-featured { grid-template-columns: minmax(16rem, .78fr) minmax(0, 1.22fr); gap: 2rem; }
+  .editorial-profile.is-reversed { grid-template-columns: minmax(0, 1.22fr) minmax(16rem, .78fr); }
+  .speakers-cta { grid-template-columns: 1fr; }
+  .speakers-cta-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
   .speaker-grid, .speaker-grid.cols-2 { grid-template-columns: 1fr; }
   .speaker-card { max-width: 420px; margin-inline: auto; width: 100%; }
+  .speaker-hero { padding-block: 3.75rem; }
+  .speaker-hero h1 { font-size: clamp(2.8rem, 14vw, 4.4rem); }
+  .speaker-hero-stats { gap: 1.25rem; }
+  .speaker-hero-stats div { flex: 1 1 7rem; }
+  .speaker-hero-art { min-height: 20rem; }
+  .speaker-theme-mark { width: min(90%, 23rem); padding: 2.2rem; }
+  .speaker-theme-mark strong { font-size: clamp(1.8rem, 9vw, 2.6rem); }
+  .speaker-orbit.orbit-one { width: 22rem; height: 22rem; }
+  .speaker-orbit.orbit-two { width: 17rem; height: 17rem; }
+  .keynote-feature { grid-template-columns: 1fr; border-radius: 1.35rem; }
+  .keynote-portrait { min-height: 27rem; }
+  .keynote-copy { padding: 2rem 1.4rem 2.3rem; }
+  .lineup-heading { grid-template-columns: 1fr; gap: 1rem; }
+  .editorial-profile,
+  .editorial-profile.is-featured,
+  .editorial-profile.is-reversed { grid-template-columns: 1fr; gap: .5rem; border-radius: 1.35rem; }
+  .editorial-profile.is-reversed .editorial-photo,
+  .editorial-profile.is-reversed .editorial-copy { grid-column: auto; grid-row: auto; }
+  .editorial-profile.is-reversed .editorial-copy { padding-left: 1rem; }
+  .editorial-photo,
+  .king-ken-photo { aspect-ratio: 4 / 5; }
+  .editorial-copy { padding: 1.5rem 1rem 1.75rem; }
+  .panelist-grid { grid-template-columns: 1fr; }
+  .panelist-profile { max-width: 34rem; margin-inline: auto; }
+  .speakers-cta-actions { grid-template-columns: 1fr; width: 100%; }
 }
