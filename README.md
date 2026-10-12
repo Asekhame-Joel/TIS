@@ -26,3 +26,5 @@ scripts/    Local development router and ticket-pricing regression check
 ```
 
 See `PAYMENTS_SETUP.md` for the cPanel, database, email, split-payment and go-live checklist.
+
+See `CACHE_DEPLOYMENT.md` for the browser, Namecheap cPanel and Cloudflare cache policy.
