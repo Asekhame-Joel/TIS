@@ -19,8 +19,8 @@ $homeTiers = tis_ticket_tiers();
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <link rel="stylesheet" href="<?= tis_asset('/assets/css/style.css') ?>">
+  <link rel="stylesheet" href="<?= tis_asset('/assets/css/responsive.css') ?>">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -43,7 +43,7 @@ $homeTiers = tis_ticket_tiers();
         <aside class="hero-flyer-card reveal" aria-label="The Intellectual Summit 2026 event flyer">
           <figure class="hero-flyer-frame">
             <img
-              src="/assets/images/summit-2026-flyer.png"
+              src="<?= tis_asset('/assets/images/summit-2026-flyer.png') ?>"
               alt="The Intellectual Summit 2026: The Student, The Journey, The Destination. 14 November 2026 at 9 AM, Okunozee Hotel and Suites, Okada, Edo State."
               width="2160"
               height="2700"
@@ -292,6 +292,6 @@ $homeTiers = tis_ticket_tiers();
 
   <?php tis_render_footer(); ?>
 
-  <script src="/assets/js/main.js"></script>
+  <script src="<?= tis_asset('/assets/js/main.js') ?>"></script>
 </body>
 </html>

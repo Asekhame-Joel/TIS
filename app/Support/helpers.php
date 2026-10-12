@@ -102,6 +102,60 @@ function tis_site_url(string $path = ''): string
     return $base . '/' . ltrim($path, '/');
 }
 
+/**
+ * Return a public asset URL with a content-derived version.
+ *
+ * A changed file gets a changed URL, so browsers may safely cache the old
+ * version while every newly rendered page immediately requests the new one.
+ */
+function tis_asset(string $path): string
+{
+    static $versions = [];
+
+    $urlPath = '/' . ltrim($path, '/');
+    if (!str_starts_with($urlPath, '/assets/')) {
+        throw new InvalidArgumentException('Only public assets can be versioned.');
+    }
+
+    if (isset($versions[$urlPath])) {
+        return $versions[$urlPath];
+    }
+
+    $publicRoot = realpath(TIS_PROJECT_ROOT . '/public');
+    $assetPath = realpath(TIS_PROJECT_ROOT . '/public' . $urlPath);
+
+    if ($publicRoot === false || $assetPath === false || !is_file($assetPath)) {
+        // Do not break an entire page if an optional asset is missing.
+        return $versions[$urlPath] = $urlPath;
+    }
+
+    $publicPrefix = rtrim($publicRoot, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+    if (!str_starts_with($assetPath, $publicPrefix)) {
+        throw new InvalidArgumentException('The asset path is outside the public directory.');
+    }
+
+    $hash = hash_file('sha256', $assetPath);
+    return $versions[$urlPath] = $urlPath . '?v=' . substr($hash ?: (string) filemtime($assetPath), 0, 12);
+}
+
+/** Ensure document responses are checked for a newer deployment on every visit. */
+function tis_send_page_cache_headers(): void
+{
+    if (headers_sent()) {
+        return;
+    }
+
+    $requestPath = parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH) ?: '/';
+    if (str_starts_with($requestPath, '/api/')) {
+        return;
+    }
+
+    header('Cache-Control: no-cache, max-age=0, must-revalidate');
+    header('CDN-Cache-Control: no-store');
+    header('Cloudflare-CDN-Cache-Control: no-store');
+    header('Expires: 0');
+}
+
 function tis_paystack_fee_kobo(int $amountKobo, ?array $config = null): int
 {
     if ($amountKobo < 0) {
