@@ -102,64 +102,6 @@ function tis_site_url(string $path = ''): string
     return $base . '/' . ltrim($path, '/');
 }
 
-/**
- * Return a public asset URL with a version derived from the file contents.
- *
- * The URL changes automatically whenever the deployed file changes, allowing
- * browsers and CDNs to cache each immutable version for a long time safely.
- */
-function tis_asset(string $path): string
-{
-    $normalized = '/' . ltrim($path, '/');
-    if (!str_starts_with($normalized, '/assets/')) {
-        throw new InvalidArgumentException('Only files inside /assets may be versioned.');
-    }
-
-    static $versions = [];
-    if (isset($versions[$normalized])) {
-        return $normalized . '?v=' . $versions[$normalized];
-    }
-
-    $publicRoot = TIS_PROJECT_ROOT . '/public';
-    $file = $publicRoot . $normalized;
-    $realPublicRoot = realpath($publicRoot);
-    $realFile = realpath($file);
-
-    if ($realPublicRoot === false || $realFile === false || !str_starts_with($realFile, $realPublicRoot . DIRECTORY_SEPARATOR) || !is_file($realFile)) {
-        throw new RuntimeException('Public asset not found: ' . $normalized);
-    }
-
-    $hash = hash_file('sha256', $realFile);
-    if (!is_string($hash) || $hash === '') {
-        throw new RuntimeException('Unable to version public asset: ' . $normalized);
-    }
-
-    $versions[$normalized] = substr($hash, 0, 12);
-    return $normalized . '?v=' . $versions[$normalized];
-}
-
-/**
- * Dynamic pages may be kept locally, but must be revalidated on every visit.
- * CDN-specific headers prevent an accidental Cloudflare "Cache Everything"
- * rule from serving stale HTML while leaving versioned assets cacheable.
- */
-function tis_send_page_cache_headers(): void
-{
-    if (headers_sent()) {
-        return;
-    }
-
-    $path = parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH) ?: '/';
-    if (preg_match('#^/api(?:/|$)#', $path) === 1) {
-        return;
-    }
-
-    header('Cache-Control: no-cache, max-age=0, must-revalidate');
-    header('CDN-Cache-Control: no-store');
-    header('Cloudflare-CDN-Cache-Control: no-store');
-    header('Expires: 0');
-}
-
 function tis_paystack_fee_kobo(int $amountKobo, ?array $config = null): int
 {
     if ($amountKobo < 0) {

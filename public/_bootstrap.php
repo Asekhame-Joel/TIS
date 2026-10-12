@@ -12,7 +12,6 @@ $candidates = array_filter([
 foreach ($candidates as $bootstrap) {
     if (is_file($bootstrap)) {
         require $bootstrap;
-        tis_send_page_cache_headers();
         return;
     }
 }

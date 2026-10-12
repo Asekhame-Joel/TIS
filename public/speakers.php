@@ -18,8 +18,8 @@ require __DIR__ . '/_bootstrap.php';
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<?= tis_asset('/assets/css/style.css') ?>">
-  <link rel="stylesheet" href="<?= tis_asset('/assets/css/responsive.css') ?>">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body class="speakers-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -52,7 +52,7 @@ require __DIR__ . '/_bootstrap.php';
       <div class="container">
         <article class="keynote-feature reveal">
           <div class="keynote-portrait">
-            <img src="<?= tis_asset('/assets/images/gold.webp') ?>" alt="Dr Jochebed Emuveyan, founder and host of The Intellectual Summit" width="900" height="1125" loading="lazy" decoding="async">
+            <img src="/assets/images/gold.png" alt="Dr Jochebed Emuveyan, founder and host of The Intellectual Summit" width="900" height="1125">
             <span class="profile-number" aria-hidden="true">01</span>
           </div>
           <div class="keynote-copy">
@@ -80,7 +80,7 @@ require __DIR__ . '/_bootstrap.php';
         <div class="editorial-lineup">
           <article class="editorial-profile is-featured reveal">
             <div class="editorial-photo">
-              <img src="<?= tis_asset('/assets/images/speakers/victory-ashaka.webp') ?>" alt="Victory Ashaka" width="1080" height="1350" loading="lazy" decoding="async">
+              <img src="/assets/images/speakers/victory-ashaka.webp" alt="Victory Ashaka" width="1080" height="1350" loading="lazy">
               <span class="profile-number" aria-hidden="true">02</span>
             </div>
             <div class="editorial-copy">
@@ -102,7 +102,7 @@ require __DIR__ . '/_bootstrap.php';
 
           <article class="editorial-profile is-reversed reveal">
             <div class="editorial-photo king-ken-photo">
-              <img src="<?= tis_asset('/assets/images/speakers/king-ken-event.webp') ?>" alt="King Ken, speaker at The Intellectual Summit 2026" width="960" height="1200" loading="lazy" decoding="async">
+              <img src="/assets/images/speakers/king-ken-event.png" alt="King Ken, speaker at The Intellectual Summit 2026" width="1620" height="2025" loading="lazy">
               <span class="profile-number" aria-hidden="true">03</span>
             </div>
             <div class="editorial-copy">
@@ -123,7 +123,7 @@ require __DIR__ . '/_bootstrap.php';
 
           <article class="editorial-profile reveal">
             <div class="editorial-photo">
-              <img src="<?= tis_asset('/assets/images/speakers/obi.webp') ?>" alt="Obi, Osuchukwu Kenechukwu Obiagboso" width="1080" height="1350" loading="lazy" decoding="async">
+              <img src="/assets/images/speakers/obi.webp" alt="Obi, Osuchukwu Kenechukwu Obiagboso" width="1080" height="1350" loading="lazy">
               <span class="profile-number" aria-hidden="true">04</span>
             </div>
             <div class="editorial-copy">
@@ -157,7 +157,7 @@ require __DIR__ . '/_bootstrap.php';
         <div class="panelist-grid">
           <article class="panelist-profile reveal">
             <div class="panelist-photo">
-              <img src="<?= tis_asset('/assets/images/speakers/bukola-aladesulu.webp') ?>" alt="Amb Bukola Aladesulu" width="1080" height="1350" loading="lazy" decoding="async">
+              <img src="/assets/images/speakers/bukola-aladesulu.webp" alt="Amb Bukola Aladesulu" width="1080" height="1350" loading="lazy">
               <span class="panelist-label">Panelist</span>
             </div>
             <div class="panelist-copy">
@@ -178,7 +178,7 @@ require __DIR__ . '/_bootstrap.php';
 
           <article class="panelist-profile reveal reveal-delay-1">
             <div class="panelist-photo">
-              <img src="<?= tis_asset('/assets/images/speakers/dr-harmony-ibezim.webp') ?>" alt="Dr Harmony U. Ibezim" width="1080" height="1350" loading="lazy" decoding="async">
+              <img src="/assets/images/speakers/dr-harmony-ibezim.webp" alt="Dr Harmony U. Ibezim" width="1080" height="1350" loading="lazy">
               <span class="panelist-label">Panelist</span>
             </div>
             <div class="panelist-copy">
@@ -216,6 +216,6 @@ require __DIR__ . '/_bootstrap.php';
   </main>
 
   <?php tis_render_footer(); ?>
-  <script src="<?= tis_asset('/assets/js/main.js') ?>"></script>
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -30,9 +30,9 @@ $vip = $ticketTiers['vip'];
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<?= tis_asset('/assets/css/style.css') ?>">
-  <link rel="stylesheet" href="<?= tis_asset('/assets/css/responsive.css') ?>">
-  <link rel="stylesheet" href="<?= tis_asset('/assets/css/payment.css') ?>">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <link rel="stylesheet" href="/assets/css/payment.css">
   <style>
     /* Summit 2026 page-specific styles */
     .summit-hero {
@@ -721,7 +721,7 @@ $vip = $ticketTiers['vip'];
 
 
   <script id="ticket-tier-data" type="application/json"><?= json_encode($checkoutTiers, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_THROW_ON_ERROR) ?></script>
-  <script src="<?= tis_asset('/assets/js/main.js') ?>"></script>
-  <script src="<?= tis_asset('/assets/js/payment.js') ?>"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/payment.js"></script>
 </body>
 </html>
