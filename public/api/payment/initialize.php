@@ -21,6 +21,7 @@ try {
     $fullName = trim((string) ($input['full_name'] ?? ''));
     $email = strtolower(trim((string) ($input['email'] ?? '')));
     $phone = trim((string) ($input['phone'] ?? ''));
+    $referrerName = trim((string) ($input['referrer_name'] ?? ''));
     $method = (string) ($input['payment_method'] ?? '');
     $tierSlug = strtolower(trim((string) ($input['tier'] ?? '')));
     $tier = tis_ticket_tier($tierSlug, $config);
@@ -34,6 +35,10 @@ try {
     }
     if (!preg_match('/^[0-9+() .-]{7,24}$/', $phone)) {
         tis_json_response(['success' => false, 'message' => 'Enter a valid phone number.'], 422);
+    }
+    $referrerNameLength = function_exists('mb_strlen') ? mb_strlen($referrerName) : strlen($referrerName);
+    if ($referrerNameLength > 100) {
+        tis_json_response(['success' => false, 'message' => 'The referrer’s name must not exceed 100 characters.'], 422);
     }
     if (!in_array($method, ['online', 'bank_transfer'], true)) {
         tis_json_response(['success' => false, 'message' => 'Choose a valid payment method.'], 422);
@@ -69,14 +74,15 @@ try {
     $reference = 'TIS26-' . strtoupper(bin2hex(random_bytes(10)));
     $amount = (int) $tier['checkout_amount_kobo'];
     $insert = $db->prepare(
-        "INSERT INTO tis_orders (reference, full_name, email, phone, tier, amount_kobo, ticket_price_kobo, " .
-        "secondary_allocation_kobo, payment_method, status, client_hash) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)"
+        "INSERT INTO tis_orders (reference, full_name, email, phone, referrer_name, tier, amount_kobo, ticket_price_kobo, " .
+        "secondary_allocation_kobo, payment_method, status, client_hash) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', ?)"
     );
     $insert->execute([
         $reference,
         $fullName,
         $email,
         $phone,
+        $referrerName !== '' ? $referrerName : null,
         $tierSlug,
         $amount,
         (int) $tier['ticket_price_kobo'],
@@ -98,6 +104,7 @@ try {
             'order_reference' => $reference,
             'attendee_name' => $fullName,
             'phone' => $phone,
+            'referrer_name' => $referrerName !== '' ? $referrerName : null,
             'tier' => (string) $tier['label'],
             'tier_slug' => $tierSlug,
             'ticket_price_kobo' => (int) $tier['ticket_price_kobo'],

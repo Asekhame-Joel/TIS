@@ -192,7 +192,7 @@ $homeTiers = tis_ticket_tiers();
                 <span class="home-tier-kicker">Essential admission</span>
                 <h3 id="home-standard-title"><?= htmlspecialchars((string) $homeTiers['standard']['label']) ?></h3>
                 <p>Your essential Summit package, including a welcome drink.</p>
-                <ul class="home-tier-benefits"><li>Event access</li><li>TIS curated food pack</li><li>Branded lanyard</li><li>Welcome drink on arrival</li></ul>
+                <ul class="home-tier-benefits"><li>Event access</li><li>TIS curated food pack</li><li>Branded lanyard</li><li>Welcome drink on arrival</li><li>Certification of attendance</li></ul>
               </div>
               <footer class="home-tier-card-footer">
                 <span class="home-ticket-price-label"></span>
@@ -209,7 +209,7 @@ $homeTiers = tis_ticket_tiers();
                 <span class="home-tier-kicker">Elevated experience</span>
                 <h3 id="home-premium-title"><?= htmlspecialchars((string) $homeTiers['premium']['label']) ?></h3>
                 <p>Everything in Regular, with enhanced comfort and branded items.</p>
-                <ul class="home-tier-benefits"><li>Everything in Regular</li><li>TIS T-shirt + souvenir item</li><li>Reserved seating</li><li>Branded items</li></ul>
+                <ul class="home-tier-benefits"><li>Everything in Regular</li><li>TIS T-shirt + souvenir item</li><li>Reserved seating</li><li>Branded items</li><li>Certification of attendance</li></ul>
               </div>
               <footer class="home-tier-card-footer">
                 <span class="home-ticket-price-label"></span>

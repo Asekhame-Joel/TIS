@@ -683,6 +683,11 @@ $vip = $ticketTiers['vip'];
             <label for="checkout-phone">Phone number</label>
             <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="24" placeholder="0801 234 5678" required>
           </div>
+          <div class="field">
+            <label for="checkout-referrer">Referrer’s name <span class="field-optional">(optional)</span></label>
+            <input id="checkout-referrer" name="referrer_name" type="text" autocomplete="off" maxlength="100" placeholder="Who referred you?">
+            <span class="field-hint">Enter the name of the person who told you about the Summit.</span>
+          </div>
           <div class="checkout-honeypot" aria-hidden="true">
             <label for="checkout-website">Website</label>
             <input id="checkout-website" name="website" type="text" tabindex="-1" autocomplete="off">

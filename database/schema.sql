@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS tis_orders (
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(190) NOT NULL,
     phone VARCHAR(24) NOT NULL,
+    referrer_name VARCHAR(100) DEFAULT NULL,
     tier VARCHAR(24) NOT NULL DEFAULT 'premium',
     amount_kobo INT UNSIGNED NOT NULL,
     ticket_price_kobo INT UNSIGNED NOT NULL,

@@ -97,6 +97,14 @@
   white-space: nowrap;
 }
 
+.field-optional {
+  color: var(--muted);
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 .payment-options {
   display: grid;
   gap: 0.75rem;
