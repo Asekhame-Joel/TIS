@@ -574,7 +574,7 @@ $vip = $ticketTiers['vip'];
                 <span class="tier-kicker">Essential admission</span>
                 <h3 id="standard-tier-title"><?= htmlspecialchars((string) $standard['label']) ?></h3>
                 <p class="tier-description">Your essential Summit package, including a welcome drink.</p>
-                <ul class="tier-benefits"><li>Event access</li><li>TIS curated food pack</li><li>Branded lanyard</li><li>Welcome drink on arrival</li></ul>
+                <ul class="tier-benefits"><li>Event access</li><li>TIS curated food pack</li><li>Branded lanyard</li><li>Welcome drink on arrival</li><li>Certificate of participation</li></ul>
               </div>
               <div class="tier-card-footer">
                 <span class="ticket-price-label"></span>
@@ -598,7 +598,7 @@ $vip = $ticketTiers['vip'];
                 <span class="tier-kicker">Elevated experience</span>
                 <h3 id="premium-tier-title"><?= htmlspecialchars((string) $premium['label']) ?></h3>
                 <p class="tier-description">Everything in Regular, with enhanced comfort and branded items.</p>
-                <ul class="tier-benefits"><li>Everything in Regular</li><li>TIS T-shirt + souvenir item</li><li>Reserved seating</li><li>Branded items</li></ul>
+                <ul class="tier-benefits"><li>Everything in Regular</li><li>TIS T-shirt + souvenir item</li><li>Reserved seating</li><li>Branded items</li><li>Certificate of participation</li></ul>
               </div>
               <div class="tier-card-footer">
                 <span class="ticket-price-label"></span>
@@ -642,8 +642,8 @@ $vip = $ticketTiers['vip'];
           <h2>Every ticket has a distinct Summit experience.</h2>
           <p class="lead">Regular provides the essentials. VIP adds comfort and branded items. VVIP includes the Special Session with speakers and premium attendee benefits.</p>
           <ul class="check-list" style="margin-top:1.75rem">
-            <li>Regular: event access, curated food pack, lanyard, and welcome drink</li>
-            <li>VIP: everything in Regular, T-shirt and souvenir, reserved seating, and branded items</li>
+            <li>Regular: event access, curated food pack, lanyard, welcome drink and Certificate of participation</li>
+            <li>VIP: everything in Regular, T-shirt and souvenir, reserved seating, branded items </li>
             <li>VVIP: everything in VIP plus the exclusive closed-door speaker session</li>
             <li>VVIP also includes front row seating, certificate, photo session, and gift pack</li>
           </ul>
