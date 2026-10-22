@@ -29,9 +29,13 @@ The physical-ticket module is separate from Paystack and the existing online tic
 - Enter a quantity from 1 to 1,000 and choose **Generate codes**.
 - Use **Printable list** for a print-friendly list or **Export CSV** to download all physical-ticket records.
 - Select tickets, enter a vendor name, and choose **Assign selected**.
-- Search by code or vendor. Select reported sales and choose **Mark selected sold**.
+- Search by code or vendor and select one or more tickets.
+- Choose **Mark sold** to confirm selected Unsold tickets as sold.
+- Choose **Mark unsold** to reverse selected Sold tickets that were marked sold by mistake.
+- Choose **Check in** to admit selected Sold tickets.
+- Choose **Undo check-in** to return selected Checked-in tickets to Sold so they can be admitted again.
 
-Only Unsold tickets can transition to Sold. Existing Sold or Checked-in tickets are not changed by that action.
+Each action only changes tickets in the correct starting state. Unsold tickets cannot be checked in, and Checked-in tickets must be explicitly unchecked before they can be marked Unsold.
 
 ## Entrance workflow
 
@@ -39,6 +43,7 @@ Only Unsold tickets can transition to Sold. Existing Sold or Checked-in tickets 
 - Enter a physical code. Spaces and letter case are ignored.
 - Looking up a code never checks it in.
 - A Sold ticket displays a **Check In** button.
+- Administrators also see **Undo Check-in** on an already used ticket; gate staff cannot reverse admissions.
 - The database update changes only a Sold row, atomically, so simultaneous devices cannot both check in the same ticket.
 - If the database connection fails, the page explicitly says verification is unavailable and staff must not admit the ticket.
 

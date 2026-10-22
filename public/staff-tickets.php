@@ -21,7 +21,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             }
             $codes = $service->generate((int) $quantity, $eventKey, $eventName, (int) $staff['id']);
             tis_staff_flash('success', count($codes) . ' unique physical ticket codes generated.');
-        } elseif (in_array($action, ['assign_vendor', 'mark_sold'], true)) {
+        } elseif (in_array($action, ['assign_vendor', 'mark_sold', 'mark_unsold', 'check_in', 'undo_check_in'], true)) {
             $ids = array_values(array_unique(array_filter(
                 array_map('intval', (array) ($_POST['ticket_ids'] ?? [])),
                 static fn (int $id): bool => $id > 0
@@ -43,12 +43,14 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                 $update->execute(array_merge([$vendor, $eventKey], $ids));
                 tis_staff_flash('success', $update->rowCount() . ' ticket(s) assigned to ' . $vendor . '.');
             } else {
-                $update = $db->prepare(
-                    "UPDATE tis_physical_tickets SET status = 'sold', sold_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP " .
-                    "WHERE event_key = ? AND status = 'unsold' AND id IN ({$placeholders})"
-                );
-                $update->execute(array_merge([$eventKey], $ids));
-                tis_staff_flash('success', $update->rowCount() . ' ticket(s) marked sold.');
+                $changed = $service->transitionSelected($ids, $eventKey, $action, (int) $staff['id']);
+                $messages = [
+                    'mark_sold' => ' ticket(s) marked sold.',
+                    'mark_unsold' => ' ticket(s) marked unsold.',
+                    'check_in' => ' ticket(s) checked in.',
+                    'undo_check_in' => ' ticket check-in(s) undone and returned to Sold.',
+                ];
+                tis_staff_flash('success', $changed . $messages[$action]);
             }
         } else {
             throw new RuntimeException('Unknown ticket action.');
@@ -115,7 +117,7 @@ $csrf = tis_staff_csrf_token();
       <form method="get" class="filter-form"><input name="q" value="<?= tis_staff_escape($search) ?>" placeholder="Search code or vendor"><select name="status"><option value="">All statuses</option><option value="unsold"<?= $statusFilter === 'unsold' ? ' selected' : '' ?>>Unsold</option><option value="sold"<?= $statusFilter === 'sold' ? ' selected' : '' ?>>Sold</option><option value="checked_in"<?= $statusFilter === 'checked_in' ? ' selected' : '' ?>>Checked in</option></select><button class="staff-button secondary" type="submit">Search</button></form>
     </div>
     <form method="post" id="bulk-form"><input type="hidden" name="csrf_token" value="<?= tis_staff_escape($csrf) ?>">
-      <div class="bulk-bar"><label>Vendor name<input name="vendor_name" maxlength="100" placeholder="e.g. Campus Team A"></label><button class="staff-button secondary" name="action" value="assign_vendor" type="submit">Assign selected</button><button class="staff-button primary" name="action" value="mark_sold" type="submit">Mark selected sold</button></div>
+      <div class="bulk-bar"><label>Vendor name<input name="vendor_name" maxlength="100" placeholder="e.g. Campus Team A"></label><button class="staff-button secondary" name="action" value="assign_vendor" type="submit">Assign selected</button><button class="staff-button primary" name="action" value="mark_sold" type="submit">Mark sold</button><button class="staff-button secondary" name="action" value="mark_unsold" type="submit">Mark unsold</button><button class="staff-button success" name="action" value="check_in" type="submit">Check in</button><button class="staff-button warning" name="action" value="undo_check_in" type="submit">Undo check-in</button></div>
       <div class="table-scroll"><table class="staff-table"><thead><tr><th><input type="checkbox" data-select-all aria-label="Select all visible tickets"></th><th>Code</th><th>Vendor</th><th>Status</th><th>Sold</th><th>Check-in</th></tr></thead><tbody>
       <?php if ($tickets === []): ?><tr><td colspan="6" class="empty-state">No physical tickets match this view.</td></tr><?php endif; ?>
       <?php foreach ($tickets as $ticket): ?><tr>

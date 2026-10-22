@@ -17,6 +17,7 @@ $service = new PhysicalTicketService(tis_db());
 $ticket = null;
 $error = '';
 $checkedInNow = false;
+$uncheckedNow = false;
 $code = '';
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
@@ -34,6 +35,9 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                 } else {
                     $ticket = $before;
                 }
+            } elseif (($_POST['action'] ?? '') === 'undo_check_in' && $staff['role'] === 'admin') {
+                $ticket = $service->undoCheckIn($code, $eventKey);
+                $uncheckedNow = $ticket !== null && !empty($ticket['_unchecked_now']);
             } else {
                 $ticket = $service->findByCode($code, $eventKey);
             }
@@ -54,9 +58,9 @@ $csrf = tis_staff_csrf_token();
   <?php elseif (is_array($ticket)):
     $status = (string) $ticket['status']; ?>
     <section class="verify-result <?= tis_staff_escape($status) ?>" role="status">
-      <?php if ($status === 'sold'): ?><span>Sold</span><h2>Valid ticket, ready for check-in</h2><p><?= tis_staff_escape($ticket['code']) ?><?= $ticket['vendor_name'] ? ' · ' . tis_staff_escape($ticket['vendor_name']) : '' ?></p>
+      <?php if ($status === 'sold'): ?><span><?= $uncheckedNow ? 'Check-in undone' : 'Sold' ?></span><h2><?= $uncheckedNow ? 'Ticket returned to sold' : 'Valid ticket, ready for check-in' ?></h2><p><?= tis_staff_escape($ticket['code']) ?><?= $ticket['vendor_name'] ? ' · ' . tis_staff_escape($ticket['vendor_name']) : '' ?></p>
         <form method="post"><input type="hidden" name="csrf_token" value="<?= tis_staff_escape($csrf) ?>"><input type="hidden" name="action" value="check_in"><input type="hidden" name="code" value="<?= tis_staff_escape($ticket['code']) ?>"><button class="staff-button check-in" type="submit">Check In</button></form>
-      <?php elseif ($status === 'checked_in'): ?><span><?= $checkedInNow ? 'Check-in complete' : 'Checked in' ?></span><h2><?= $checkedInNow ? 'Guest admitted' : 'Already used' ?></h2><p>Previously checked in at <strong><?= tis_staff_escape($ticket['checked_in_at']) ?></strong><?php if ($ticket['checked_in_by_name']): ?> by <?= tis_staff_escape($ticket['checked_in_by_name']) ?><?php endif; ?>.</p>
+      <?php elseif ($status === 'checked_in'): ?><span><?= $checkedInNow ? 'Check-in complete' : 'Checked in' ?></span><h2><?= $checkedInNow ? 'Guest admitted' : 'Already used' ?></h2><p>Previously checked in at <strong><?= tis_staff_escape($ticket['checked_in_at']) ?></strong><?php if ($ticket['checked_in_by_name']): ?> by <?= tis_staff_escape($ticket['checked_in_by_name']) ?><?php endif; ?>.</p><?php if ($staff['role'] === 'admin'): ?><form method="post"><input type="hidden" name="csrf_token" value="<?= tis_staff_escape($csrf) ?>"><input type="hidden" name="action" value="undo_check_in"><input type="hidden" name="code" value="<?= tis_staff_escape($ticket['code']) ?>"><button class="staff-button undo-check-in" type="submit">Undo Check-in</button></form><?php endif; ?>
       <?php else: ?><span>Unsold</span><h2>Sale needs confirmation</h2><p>The ticket exists, but it has not been marked sold. Do not admit it yet.</p><?php endif; ?>
     </section>
   <?php endif; ?>

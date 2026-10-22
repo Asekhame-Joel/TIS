@@ -101,4 +101,70 @@ final class PhysicalTicketService
         }
         return $ticket;
     }
+
+    /**
+     * Atomically returns a checked-in ticket to Sold.
+     *
+     * @return array<string,mixed>|null
+     */
+    public function undoCheckIn(string $code, string $eventKey): ?array
+    {
+        $normalized = self::normalizeCode($code);
+        $update = $this->db->prepare(
+            "UPDATE tis_physical_tickets SET status = 'sold', checked_in_at = NULL, checked_in_by = NULL, " .
+            "sold_at = COALESCE(sold_at, CURRENT_TIMESTAMP), updated_at = CURRENT_TIMESTAMP " .
+            "WHERE code = ? AND event_key = ? AND status = 'checked_in'"
+        );
+        $update->execute([$normalized, $eventKey]);
+        $changed = $update->rowCount() === 1;
+        $ticket = $this->findByCode($normalized, $eventKey);
+        if ($ticket !== null) {
+            $ticket['_unchecked_now'] = $changed;
+        }
+        return $ticket;
+    }
+
+    /**
+     * Apply one guarded status transition to selected tickets.
+     *
+     * @param list<int> $ids
+     */
+    public function transitionSelected(array $ids, string $eventKey, string $action, int $staffId): int
+    {
+        $ids = array_values(array_unique(array_filter(
+            array_map('intval', $ids),
+            static fn (int $id): bool => $id > 0
+        )));
+        if ($ids === [] || count($ids) > 1000) {
+            throw new RuntimeException('Select between 1 and 1,000 tickets.');
+        }
+
+        $placeholders = implode(',', array_fill(0, count($ids), '?'));
+        if ($action === 'mark_sold') {
+            $sql = "UPDATE tis_physical_tickets SET status = 'sold', sold_at = CURRENT_TIMESTAMP, " .
+                "updated_at = CURRENT_TIMESTAMP WHERE event_key = ? AND status = 'unsold' AND id IN ({$placeholders})";
+            $params = array_merge([$eventKey], $ids);
+        } elseif ($action === 'mark_unsold') {
+            $sql = "UPDATE tis_physical_tickets SET status = 'unsold', sold_at = NULL, checked_in_at = NULL, " .
+                "checked_in_by = NULL, updated_at = CURRENT_TIMESTAMP WHERE event_key = ? AND status = 'sold' " .
+                "AND id IN ({$placeholders})";
+            $params = array_merge([$eventKey], $ids);
+        } elseif ($action === 'check_in') {
+            $sql = "UPDATE tis_physical_tickets SET status = 'checked_in', checked_in_at = CURRENT_TIMESTAMP, " .
+                "checked_in_by = ?, updated_at = CURRENT_TIMESTAMP WHERE event_key = ? AND status = 'sold' " .
+                "AND id IN ({$placeholders})";
+            $params = array_merge([$staffId, $eventKey], $ids);
+        } elseif ($action === 'undo_check_in') {
+            $sql = "UPDATE tis_physical_tickets SET status = 'sold', checked_in_at = NULL, checked_in_by = NULL, " .
+                "sold_at = COALESCE(sold_at, CURRENT_TIMESTAMP), updated_at = CURRENT_TIMESTAMP " .
+                "WHERE event_key = ? AND status = 'checked_in' AND id IN ({$placeholders})";
+            $params = array_merge([$eventKey], $ids);
+        } else {
+            throw new RuntimeException('Unknown ticket status action.');
+        }
+
+        $update = $this->db->prepare($sql);
+        $update->execute($params);
+        return $update->rowCount();
+    }
 }
