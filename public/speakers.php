@@ -157,20 +157,20 @@ require __DIR__ . '/_bootstrap.php';
         <div class="panelist-grid">
           <article class="panelist-profile reveal">
             <div class="panelist-photo">
-              <img src="<?= tis_asset('/assets/images/speakers/bukola-aladesulu.webp') ?>" alt="Amb Bukola Aladesulu" width="1080" height="1350" loading="lazy">
+              <img src="<?= tis_asset('/assets/images/speakers/divine-chukwuemeka.webp') ?>" alt="Divine M. Chukwuemeka" width="1080" height="1350" loading="lazy">
               <span class="panelist-label">Panelist</span>
             </div>
             <div class="panelist-copy">
               <span class="profile-number" aria-hidden="true">05</span>
-              <h3>Amb Bukola Aladesulu</h3>
-              <p class="profile-title">Global advocate for youth development</p>
-              <p class="profile-intro"><strong>Bukola Aladesulu</strong> works around youth economic empowerment, opportunity access, workforce and leadership development, helping young Africans build the skills, networks and pathways they need to thrive.</p>
+              <h3>Divine M. Chukwuemeka</h3>
+              <p class="profile-title">Migration researcher, TEDx speaker and founder</p>
+              <p class="profile-intro"><strong>Divine Mmachukwu Chukwuemeka</strong> is passionate about global mobility, youth development and access to opportunities. She holds a First-Class degree in History and International Studies from Anchor University and serves as a Graduate Research Assistant at CEPDeR, Covenant University.</p>
               <details class="profile-details profile-details-dark">
                 <summary>Read full profile <span aria-hidden="true">+</span></summary>
                 <div class="profile-details-body">
-                  <p>She is the Executive Director of Unthrive, a development hub that has empowered over 2,000 young people across eleven countries through learning, mentorship, funding and career opportunities since 2023.</p>
-                  <p>She is a TheirWorld Global Youth Ambassador. She has also served as a Lagos State Youth Ambassador; she led her division in raising over $10,000 to implement ten youth-focused projects, reaching more than 10,000 young people across Nigeria, and was recognised as Youth Ambassador of the Year.</p>
-                  <p>Bukola is a Global Ambassador for Peace and was named one of the 2026 JCI Ten Outstanding Young Persons in Nigeria. She is a TEDx-recognised speaker, a Carrington Youth Fellowship Initiative alumna, and a Mini MBA graduate of Queen's University, Canada, where she graduated as the second-best fellow.</p>
+                  <p>She contributes to migration and development research and has spoken at TEDx events at Anchor University, the University of Nigeria, Nsukka, and Adekunle Ajasin University. She also participated as a discussant at HistoCON, hosted by Germany's Federal Agency for Civic Education.</p>
+                  <p>Beyond research, Divine leads youth-focused initiatives, including Beyond Borders and the AheadGen Mentorship Program. Through Linked On LinkedIn, she has equipped hundreds of students and young professionals with digital visibility and career advancement skills.</p>
+                  <p>As founder of EmigrateEase, she provides strategic advisory support for migration decisions, helping individuals navigate global mobility with clarity and confidence. Her work bridges research, advocacy, mentorship and practical opportunities to empower young people to make informed decisions about their futures.</p>
                 </div>
               </details>
             </div>

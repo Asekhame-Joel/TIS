@@ -15,6 +15,7 @@ if (class_exists(Dotenv\Dotenv::class) && is_file(TIS_PROJECT_ROOT . '/.env')) {
 }
 
 require TIS_APP_ROOT . '/Support/helpers.php';
+require TIS_APP_ROOT . '/Support/staff.php';
 
 ini_set('display_errors', '0');
 date_default_timezone_set('Africa/Lagos');

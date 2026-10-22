@@ -150,6 +150,14 @@ function tis_send_page_cache_headers(): void
         return;
     }
 
+    if (str_starts_with($requestPath, '/staff-')) {
+        header('Cache-Control: no-store, private');
+        header('CDN-Cache-Control: no-store');
+        header('Cloudflare-CDN-Cache-Control: no-store');
+        header('X-Robots-Tag: noindex, nofollow');
+        return;
+    }
+
     header('Cache-Control: no-cache, max-age=0, must-revalidate');
     header('CDN-Cache-Control: no-store');
     header('Cloudflare-CDN-Cache-Control: no-store');

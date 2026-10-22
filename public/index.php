@@ -43,10 +43,10 @@ $homeTiers = tis_ticket_tiers();
         <aside class="hero-flyer-card reveal" aria-label="The Intellectual Summit 2026 event flyer">
           <figure class="hero-flyer-frame">
             <img
-              src="<?= tis_asset('/assets/images/summit-2026-flyer.png') ?>"
-              alt="The Intellectual Summit 2026: The Student, The Journey, The Destination. 14 November 2026 at 9 AM, Okunozee Hotel and Suites, Okada, Edo State."
-              width="2160"
-              height="2700"
+              src="<?= tis_asset('/assets/images/summit-2026-lineup.webp') ?>"
+              alt="The Intellectual Summit 2026 speaker and panelist lineup: Victory Ashaka, Dr Harmony U. Ibezim, Divine M. Chukwuemeka, King Ken, Osuchukwu K. Obiagboso and convener Unique Epunam."
+              width="1200"
+              height="1500"
               fetchpriority="high"
               decoding="async"
             >

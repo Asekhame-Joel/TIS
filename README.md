@@ -26,3 +26,5 @@ scripts/    Local development router and ticket-pricing regression check
 ```
 
 See `PAYMENTS_SETUP.md` for the cPanel, database, email, split-payment and go-live checklist.
+
+See `PHYSICAL_TICKETS.md` for staff setup and the physical ticket generation, distribution, sale, and entrance workflow.
