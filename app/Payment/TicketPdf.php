@@ -24,6 +24,9 @@ final class TicketPdf
             'bank_transfer' => 'Bank Transfer',
             'mobile_money' => 'Mobile Money',
             'card' => 'Card',
+            'cash' => 'Cash',
+            'pos' => 'POS',
+            'other' => 'Manual Payment',
         ][$rawChannel] ?? ucwords(str_replace('_', ' ', $rawChannel));
         $amount = \tis_money((int) $order['amount_kobo']);
         $tier = \tis_ticket_tier((string) ($order['tier'] ?? ''), $config);

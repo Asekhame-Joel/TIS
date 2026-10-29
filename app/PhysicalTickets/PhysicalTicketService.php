@@ -71,8 +71,10 @@ final class PhysicalTicketService
     public function findByCode(string $code, string $eventKey): ?array
     {
         $query = $this->db->prepare(
-            'SELECT t.*, u.display_name AS checked_in_by_name FROM tis_physical_tickets t ' .
-            'LEFT JOIN tis_staff_users u ON u.id = t.checked_in_by WHERE t.code = ? AND t.event_key = ? LIMIT 1'
+            'SELECT t.*, u.display_name AS checked_in_by_name, o.full_name AS attendee_name, ' .
+            'o.email AS attendee_email, o.tier AS attendee_tier FROM tis_physical_tickets t ' .
+            'LEFT JOIN tis_staff_users u ON u.id = t.checked_in_by LEFT JOIN tis_orders o ON o.id = t.order_id ' .
+            'WHERE t.code = ? AND t.event_key = ? LIMIT 1'
         );
         $query->execute([self::normalizeCode($code), $eventKey]);
         $ticket = $query->fetch();
@@ -140,14 +142,13 @@ final class PhysicalTicketService
         }
 
         $placeholders = implode(',', array_fill(0, count($ids), '?'));
+        if ($action === 'mark_unsold') {
+            return $this->reverseSelectedSales($ids, $eventKey, $placeholders);
+        }
+
         if ($action === 'mark_sold') {
             $sql = "UPDATE tis_physical_tickets SET status = 'sold', sold_at = CURRENT_TIMESTAMP, " .
                 "updated_at = CURRENT_TIMESTAMP WHERE event_key = ? AND status = 'unsold' AND id IN ({$placeholders})";
-            $params = array_merge([$eventKey], $ids);
-        } elseif ($action === 'mark_unsold') {
-            $sql = "UPDATE tis_physical_tickets SET status = 'unsold', sold_at = NULL, checked_in_at = NULL, " .
-                "checked_in_by = NULL, updated_at = CURRENT_TIMESTAMP WHERE event_key = ? AND status = 'sold' " .
-                "AND id IN ({$placeholders})";
             $params = array_merge([$eventKey], $ids);
         } elseif ($action === 'check_in') {
             $sql = "UPDATE tis_physical_tickets SET status = 'checked_in', checked_in_at = CURRENT_TIMESTAMP, " .
@@ -166,5 +167,51 @@ final class PhysicalTicketService
         $update = $this->db->prepare($sql);
         $update->execute($params);
         return $update->rowCount();
+    }
+
+    /** @param list<int> $ids */
+    private function reverseSelectedSales(array $ids, string $eventKey, string $placeholders): int
+    {
+        $lockClause = $this->db->getAttribute(PDO::ATTR_DRIVER_NAME) === 'sqlite' ? '' : ' FOR UPDATE';
+        $params = array_merge([$eventKey], $ids);
+
+        $this->db->beginTransaction();
+        try {
+            $ordersQuery = $this->db->prepare(
+                "SELECT order_id FROM tis_physical_tickets WHERE event_key = ? AND status = 'sold' " .
+                "AND id IN ({$placeholders}){$lockClause}"
+            );
+            $ordersQuery->execute($params);
+            $orderIds = array_values(array_filter(array_map(
+                'intval',
+                array_column($ordersQuery->fetchAll(), 'order_id')
+            ), static fn (int $id): bool => $id > 0));
+
+            $update = $this->db->prepare(
+                "UPDATE tis_physical_tickets SET status = 'unsold', sold_at = NULL, sold_by = NULL, " .
+                "checked_in_at = NULL, checked_in_by = NULL, order_id = NULL, manual_payment_reference = NULL, " .
+                "updated_at = CURRENT_TIMESTAMP WHERE event_key = ? AND status = 'sold' AND id IN ({$placeholders})"
+            );
+            $update->execute($params);
+            $changed = $update->rowCount();
+
+            if ($orderIds !== []) {
+                $orderPlaceholders = implode(',', array_fill(0, count($orderIds), '?'));
+                $cancel = $this->db->prepare(
+                    "UPDATE tis_orders SET status = 'cancelled', ticket_number = NULL, ticket_token = NULL, " .
+                    "failure_reason = 'Manual sale reversed by staff', updated_at = CURRENT_TIMESTAMP " .
+                    "WHERE id IN ({$orderPlaceholders}) AND payment_method = 'manual'"
+                );
+                $cancel->execute($orderIds);
+            }
+
+            $this->db->commit();
+            return $changed;
+        } catch (\Throwable $error) {
+            if ($this->db->inTransaction()) {
+                $this->db->rollBack();
+            }
+            throw $error;
+        }
     }
 }
