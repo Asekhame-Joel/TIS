@@ -136,7 +136,7 @@ $csrf = tis_staff_csrf_token();
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Physical tickets | TIS Staff</title><link rel="stylesheet" href="<?= tis_asset('/assets/css/staff.css') ?>"></head>
 <body><header class="staff-header"><a class="staff-brand" href="/staff-tickets"><span class="staff-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>TIS Staff</span></a>
-<nav><a aria-current="page" href="/staff-tickets">Manage</a><a href="/staff-verify">Verify</a><form method="post" action="/staff-logout"><input type="hidden" name="csrf_token" value="<?= tis_staff_escape($csrf) ?>"><button type="submit">Sign out</button></form></nav></header>
+<nav><a aria-current="page" href="/staff-tickets">Physical</a><a href="/staff-online-tickets">Online sales</a><a href="/staff-verify">Verify</a><form method="post" action="/staff-logout"><input type="hidden" name="csrf_token" value="<?= tis_staff_escape($csrf) ?>"><button type="submit">Sign out</button></form></nav></header>
 <main class="staff-container">
   <div class="staff-title"><div><p class="staff-eyebrow">Physical ticket control</p><h1><?= tis_staff_escape($eventName) ?></h1><p class="staff-muted">Signed in as <?= tis_staff_escape($staff['display_name']) ?>.</p></div>
   <div class="staff-actions"><a class="staff-button secondary" href="/staff-ticket-print" target="_blank">Printable list</a><a class="staff-button primary" href="/staff-ticket-export">Export CSV</a></div></div>
