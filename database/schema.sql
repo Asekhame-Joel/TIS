@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS tis_orders (
     paystack_id VARCHAR(64) DEFAULT NULL,
     channel VARCHAR(32) DEFAULT NULL,
     paid_at DATETIME DEFAULT NULL,
+    checked_in_at DATETIME DEFAULT NULL,
+    checked_in_by BIGINT UNSIGNED DEFAULT NULL,
     ticket_number VARCHAR(40) DEFAULT NULL,
     ticket_token CHAR(48) DEFAULT NULL,
     email_sent_at DATETIME DEFAULT NULL,
@@ -31,7 +33,9 @@ CREATE TABLE IF NOT EXISTS tis_orders (
     UNIQUE KEY uq_tis_orders_ticket_token (ticket_token),
     KEY idx_tis_orders_email_created (email, created_at),
     KEY idx_tis_orders_client_created (client_hash, created_at),
-    KEY idx_tis_orders_status (status)
+    KEY idx_tis_orders_status (status),
+    KEY idx_tis_orders_checked_in (checked_in_at),
+    KEY idx_tis_orders_checked_in_by (checked_in_by)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS tis_ticket_jobs (
